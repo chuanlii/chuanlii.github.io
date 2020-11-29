@@ -104,9 +104,9 @@ theme: ils
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: 'git'
+  type: git
   repo: https://github.com/chuan-L/chuan-L.github.io
-  branch: master
+  branch: gh-pages
 search:
   path: search.json
   field: post
