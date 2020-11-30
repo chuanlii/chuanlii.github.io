@@ -30,7 +30,7 @@ $ git push origin main
 
 ``` bash
 push代码后，打开blog页面，发现是一片空白。看gh-pages里面生成的代码，是空的。本地hexo generate是没有问题的。
-检查main分支的themes下的ils，是空的。
+检查main分支的themes下的ils，是空的。且ils文件夹有一个白色箭头，代表一个子模块。
 重新git add themes/ils，出现错误。
 fatal: in unpopulated submodule 'themes/ils'
 git rm -rf themes/ils
