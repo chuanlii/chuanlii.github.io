@@ -1,38 +1,29 @@
 ---
-title: Hello World
+title: 使用hexo创建github pages
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
 
-### Create a new post
+hexo：一个使用简单的博客框架，通过md文件生成静态页面。
+Travis CI：持续集成工具，检测到github上的提交后，自动执行脚本，更新静态页面
+hexo主题：[ILS](https://github.com/XPoet/hexo-theme-keep)
+
+创建两个分支，main和gp-pages，main存放所有文件，gh-pages存放生成的页面，同时在settings里面将gh-pages设置为github Pages的默认分支。
+使用时，只需要git上传md文件，travis就会自动执行脚本，更新gh-pages分支内容。
+### 使用
 
 ``` bash
+# 创建
 $ hexo new "My New Post"
-```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+# 本地生成
+$ hexo g 
 
-### Run server
-
-``` bash
+# 本地演示
 $ hexo server
+
+# 上传
+$ git push origin main
+
 ```
 
-More info: [Server](https://hexo.io/docs/server.html)
 
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
