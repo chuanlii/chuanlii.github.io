@@ -1,5 +1,10 @@
 ---
 title: 使用hexo创建github pages
+tags:
+  - hexo
+  - git
+categories:
+  - 其他
 ---
 
 
@@ -34,6 +39,7 @@ push代码后，打开blog页面，发现是一片空白。看gh-pages里面生�
 重新git add themes/ils，出现错误。
 fatal: in unpopulated submodule 'themes/ils'
 git rm -rf themes/ils
-git add .
+
+删掉ils，再重新添加，解决。
 
 ```
