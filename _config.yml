@@ -105,7 +105,7 @@ theme: ils
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/chuan-L/chuan-L.github.io
+  repo: https://github.com/chuanlii/chuanlii.github.io
   branch: gh-pages
 search:
   path: search.json

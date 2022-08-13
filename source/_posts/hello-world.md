@@ -8,7 +8,6 @@ categories:
 date: 2020-12-01 22:19:45
 ---
 
-
 hexo：一个使用简单的博客框架，通过md文件生成静态页面。
 Travis CI：持续集成工具，检测到github上的提交后，自动执行脚本，更新静态页面
 hexo主题：[ILS](https://github.com/XPoet/hexo-theme-keep)
@@ -18,6 +17,9 @@ hexo主题：[ILS](https://github.com/XPoet/hexo-theme-keep)
 ### 使用
 
 ``` bash
+npm install hexo-cli -g
+npm init xx
+cd xx
 # 创建
 $ hexo new "My New Post"
 
@@ -27,9 +29,10 @@ $ hexo g
 # 本地演示
 $ hexo server
 
-# 上传
-$ git push origin main
-
+# 部署 https://hexo.io/zh-cn/docs/one-command-deployment
+# 安装hexo-deployer-git后，
+$ hexo clean 
+$ hexo d 
 ```
 
 ### 问题
