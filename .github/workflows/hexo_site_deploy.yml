@@ -1,20 +1,35 @@
-name: deploying Hexo project to GitHub pages
+name: Deploy Hexo to GitHub Pages
+
 on:
   push:
     branches:
-      - main #  分支有 push 行为时就触发这个 action
+      - main
+
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
-      - name: Build and Deploy
-        uses: theme-keep/hexo-deploy-github-pages-action@master # 使用专门部署 Hexo 到 GitHub pages 的 action
-        env:
-          PERSONAL_TOKEN: ${{ secrets.HEXO_SITE_DEPLOY }} # secret 名
-          PUBLISH_REPOSITORY: chuanlii/blog_pages  # 公共仓库，格式：GitHub 用户名/仓库名
-          BRANCH: gh-pages
-          PUBLISH_DIR: ./public # 部署 public 目录下的文件
+          node-version: '22.11.0'
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Configure NPM to use official registry
+        run: pnpm config set registry https://registry.npmjs.org/
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Generate static files
+        run: npx hexo generate
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.HEXO_SITE_DEPLOY }}
+          publish_branch: gh-pages
+          publish_dir: ./public
