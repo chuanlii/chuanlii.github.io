@@ -1,5 +1,5 @@
 ---
-title: arch升级
+title: arch升级问题
 date: 2025-03-15 22:51:16
 tags: 
   - arch
