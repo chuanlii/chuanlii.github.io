@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <title>
-        WebAssembly |
         
         非对称笔记
     </title>
@@ -47,7 +46,7 @@
         <ul class="menu-list">
             
                 <li class="menu-item">
-                    <a class=""
+                    <a class="active"
                        href="/"
                     >
                         HOME
@@ -105,7 +104,7 @@
         <ul class="drawer-menu-list">
             
                 <li class="drawer-menu-item">
-                    <a class=""
+                    <a class="active"
                        href="/">HOME</a>
                 </li>
             
@@ -149,144 +148,134 @@
                 <main class="main-content normal-code-theme">
 
                     
-                        <div class="fade-in-down-animation">
-    <div class="article-content-container">
-
-        <div class="article-title">
-            <span class="title-hover-animation">WebAssembly</span>
-        </div>
-
+                        <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
         
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/images/avatar.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span>chuan</span>
-                        <span class="level">Lv2</span>
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2022-05-28 16:20:51
-    </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>
-            <ul>
-                
-                    <li>
-                        <a href="/categories/Life/">Life</a>
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>
-            <ul>
-                
-                    <li>
-                        <a href="/tags/Hexo/">Hexo</a>
-                    </li>
-                
-            </ul>
-        </span>
-    
+            <li class="home-article-item">
 
-    
-    
-        <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>171 Words</span>
-        </span>
-    
-    
-        <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i> <span>1 Mins</span>
-        </span>
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
-        </span>
-    
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/08/Vim-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">
+                        Vim 使用说明
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        vim两种模式，insert和normal模式，normal就是命令模式，insert就是编辑模式。
+参考https://coolshell.cn/articles/5426.html
+非常全的：https://vim.rtorr.com/lang/...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Tue Dec 08 2020 22:19:45 GMT+0000">2020-12-08</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/linux/">linux</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/vim/">vim</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2020/12/08/Vim-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">Read more <i class="fas fa-angle-right"></i></a>
 </div>
 
-                    </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/01/hexo%E5%88%9B%E5%BB%BAgitpages/">
+                        使用hexo创建github pages
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        hexo：一个使用简单的博客框架，通过md文件生成静态页面。Travis CI：持续集成工具，检测到github上的提交后，自动执行脚本，更新静态页面hexo主题：ILS
+创建两个分支，main和gp-pages，main存放所有文件，gh-page...
+                    
                 </div>
-            </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Tue Dec 01 2020 22:19:45 GMT+0000">2020-12-01</span></span>
         
-
-        <div class="article-content markdown-body">
-            <p>一个WebAssembly例子</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rustc --version 检查是否安装</span><br><span class="line">rustup 安装和版本管理工具</span><br><span class="line">Cargo：Rust 的构建工具和包管理器</span><br><span class="line">rustup update 升级rust</span><br><span class="line"></span><br><span class="line">cargo new hello 创建项目</span><br><span class="line">cargo build 可以构建项目</span><br><span class="line">cargo run 可以运行项目</span><br><span class="line">cargo test 可以测试项目</span><br><span class="line">cargo doc 可以为项目构建文档</span><br><span class="line">cargo publish 可以将库发布到 crates.io</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>更新cargo 源<br>在.cargo/下，创建config文件，配置如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[source.crates-io]</span><br><span class="line">registry = &quot;https://github.com/rust-lang/crates.io-index&quot;</span><br><span class="line">replace-with = &#x27;ustc&#x27;</span><br><span class="line">[source.ustc]</span><br><span class="line">registry = &quot;git://mirrors.ustc.edu.cn/crates.io-index&quot;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">安装wasm-pack</span><br><span class="line">sudo curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh</span><br><span class="line"></span><br><span class="line">cargo install cargo-generate</span><br><span class="line">cargo generate --git https://github.com/rustwasm/wasm-pack-template</span><br><span class="line"></span><br><span class="line">wasm-pack build </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-        </div>
-
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>Post title：WebAssembly</li>
-        <li>Post author：chuan</li>
-        <li>Create time：2022-05-28 16:20:51</li>
-        <li>
-            Post link：http://example.com/2022/05/28/WebAssembly/
-        </li>
-        <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
-        </li>
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/hexo/">hexo</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/git/">git</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2020/12/01/hexo%E5%88%9B%E5%BB%BAgitpages/">Read more <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
     </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
+    
+        <a class="prev btn"
+           href="/"
+        >Prev</a>
+    
+
+    
 </div>
 
-            </div>
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/05/29/%E5%89%91%E6%8C%87offer%E7%AC%94%E8%AE%B0/"
-                        >
-                            <span class="left arrow-icon flex-center" >
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">剑指offer笔记</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2022/05/28/%E4%BD%BF%E7%94%A8wsl/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">使用wsl</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex-center" >
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
     </div>
 </div>
 
@@ -344,10 +333,6 @@
 
         <!-- TOC aside toggle -->
         
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
-            </li>
-        
 
     </ul>
 </div>
@@ -395,12 +380,6 @@
 
     <!-- page aside -->
     <aside class="page-aside">
-        
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        
-    </div>
-</div>
         
     </aside>
 
@@ -452,17 +431,6 @@
     <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/local-search.js"></script>
 
 
-
-
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/left-side-toggle.js"></script>
-
-    
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/code-copy.js"></script>
-    
-
-    
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/toc.js"></script>
-    
 
 
 </body>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <title>
-        WebAssembly |
+        Category: 基金 |
         
         非对称笔记
     </title>
@@ -63,7 +63,7 @@
                 </li>
             
                 <li class="menu-item">
-                    <a class=""
+                    <a class="active"
                        href="/categories"
                     >
                         CATEGORIES
@@ -115,7 +115,7 @@
                 </li>
             
                 <li class="drawer-menu-item">
-                    <a class=""
+                    <a class="active"
                        href="/categories">CATEGORIES</a>
                 </li>
             
@@ -150,143 +150,42 @@
 
                     
                         <div class="fade-in-down-animation">
-    <div class="article-content-container">
-
-        <div class="article-title">
-            <span class="title-hover-animation">WebAssembly</span>
+    <div class="category-container">
+        <div class="category-name">
+            <i class="fas fa-folder"></i> 基金 (1)
         </div>
-
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/images/avatar.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span>chuan</span>
-                        <span class="level">Lv2</span>
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2022-05-28 16:20:51
-    </span>
+        <div class="category-post-list">
+            
+<div class="archive-list-container">
     
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>
-            <ul>
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2025</span>
+                <span class="archive-year-post-count">(1)</span>
+            </div>
+            <ul class="article-list">
                 
-                    <li>
-                        <a href="/categories/Life/">Life</a>
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2025/03/16/%E5%9F%BA%E9%87%91%E6%8A%95%E8%B5%842503/"
+                        >基金投资2503</a>
+                        <span class="article-date">03-16</span>
                     </li>
                 
             </ul>
-        </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>
-            <ul>
-                
-                    <li>
-                        <a href="/tags/Hexo/">Hexo</a>
-                    </li>
-                
-            </ul>
-        </span>
-    
-
-    
-    
-        <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>171 Words</span>
-        </span>
-    
-    
-        <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i> <span>1 Mins</span>
-        </span>
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
-        </span>
+        </section>
     
 </div>
-
-                    </div>
-                </div>
-            </div>
-        
-
-        <div class="article-content markdown-body">
-            <p>一个WebAssembly例子</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rustc --version 检查是否安装</span><br><span class="line">rustup 安装和版本管理工具</span><br><span class="line">Cargo：Rust 的构建工具和包管理器</span><br><span class="line">rustup update 升级rust</span><br><span class="line"></span><br><span class="line">cargo new hello 创建项目</span><br><span class="line">cargo build 可以构建项目</span><br><span class="line">cargo run 可以运行项目</span><br><span class="line">cargo test 可以测试项目</span><br><span class="line">cargo doc 可以为项目构建文档</span><br><span class="line">cargo publish 可以将库发布到 crates.io</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>更新cargo 源<br>在.cargo/下，创建config文件，配置如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[source.crates-io]</span><br><span class="line">registry = &quot;https://github.com/rust-lang/crates.io-index&quot;</span><br><span class="line">replace-with = &#x27;ustc&#x27;</span><br><span class="line">[source.ustc]</span><br><span class="line">registry = &quot;git://mirrors.ustc.edu.cn/crates.io-index&quot;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">安装wasm-pack</span><br><span class="line">sudo curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh</span><br><span class="line"></span><br><span class="line">cargo install cargo-generate</span><br><span class="line">cargo generate --git https://github.com/rustwasm/wasm-pack-template</span><br><span class="line"></span><br><span class="line">wasm-pack build </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
         </div>
+    </div>
+    <div class="category-paginator">
+        <div class="paginator">
+    
 
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>Post title：WebAssembly</li>
-        <li>Post author：chuan</li>
-        <li>Create time：2022-05-28 16:20:51</li>
-        <li>
-            Post link：http://example.com/2022/05/28/WebAssembly/
-        </li>
-        <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
-        </li>
-    </ul>
+    
 </div>
 
-            </div>
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/05/29/%E5%89%91%E6%8C%87offer%E7%AC%94%E8%AE%B0/"
-                        >
-                            <span class="left arrow-icon flex-center" >
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">剑指offer笔记</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2022/05/28/%E4%BD%BF%E7%94%A8wsl/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">使用wsl</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex-center" >
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
     </div>
 </div>
 
@@ -344,10 +243,6 @@
 
         <!-- TOC aside toggle -->
         
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
-            </li>
-        
 
     </ul>
 </div>
@@ -395,12 +290,6 @@
 
     <!-- page aside -->
     <aside class="page-aside">
-        
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        
-    </div>
-</div>
         
     </aside>
 
@@ -452,17 +341,6 @@
     <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/local-search.js"></script>
 
 
-
-
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/left-side-toggle.js"></script>
-
-    
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/code-copy.js"></script>
-    
-
-    
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/toc.js"></script>
-    
 
 
 </body>
