@@ -20,7 +20,7 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/avatar.png","avatar":"images/avatar.png","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"description":"Very welcome!"}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"side_tools":{"enable":true},"version":"3.0.2"};
     KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
   </script>
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 
 <body>
@@ -228,7 +228,7 @@
 <p>创建两个分支，main和gp-pages，main存放所有文件，gh-pages存放生成的页面，同时在settings里面将gh-pages设置为github Pages的默认分支。<br>使用时，只需要git上传md文件，travis就会自动执行脚本，更新gh-pages分支内容。</p>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm init xx</span><br><span class="line"><span class="built_in">cd</span> xx</span><br><span class="line"><span class="comment"># 创建</span></span><br><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地生成</span></span><br><span class="line">$ hexo g </span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地演示</span></span><br><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署 https://hexo.io/zh-cn/docs/one-command-deployment</span></span><br><span class="line"><span class="comment"># 安装hexo-deployer-git后，</span></span><br><span class="line">$ hexo clean </span><br><span class="line">$ hexo d </span><br></pre></td></tr></table></figure>
 
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">push代码后，打开blog页面，发现是一片空白。看gh-pages里面生成的代码，是空的。本地hexo generate是没有问题的。</span><br><span class="line">检查main分支的themes下的ils，是空的。且ils文件夹有一个白色箭头，代表一个子模块。</span><br><span class="line">重新git add themes/ils，出现错误。</span><br><span class="line">fatal: <span class="keyword">in</span> unpopulated submodule <span class="string">&#x27;themes/ils&#x27;</span></span><br><span class="line">git rm -rf themes/ils</span><br><span class="line"></span><br><span class="line">删掉ils，再重新添加，解决。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">push代码后，打开blog页面，发现是一片空白。看gh-pages里面生成的代码，是空的。本地hexo generate是没有问题的。</span><br><span class="line">检查main分支的themes下的ils，是空的。且ils文件夹有一个白色箭头，代表一个子模块。</span><br><span class="line">重新git add themes/ils，出现错误。</span><br><span class="line">fatal: <span class="keyword">in</span> unpopulated submodule <span class="string">&#x27;themes/ils&#x27;</span></span><br><span class="line">git <span class="built_in">rm</span> -rf themes/ils</span><br><span class="line"></span><br><span class="line">删掉ils，再重新添加，解决。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -240,7 +240,7 @@
         <li>Post author：chuan</li>
         <li>Create time：2020-12-01 22:19:45</li>
         <li>
-            Post link：http://example.com/2020/12/01/hello-world/
+            Post link：http://example.com/2020/12/01/hexo创建gitpages/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -291,7 +291,7 @@
             
               <span>2020</span> -
             
-            2022 <i class="fas fa-heart icon-animate"></i> <a href="/">chuan</a>
+            2025 <i class="fas fa-heart icon-animate"></i> <a href="/">chuan</a>
         </div>
         
             <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
