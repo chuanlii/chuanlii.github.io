@@ -28,7 +28,7 @@
 <meta property="og:description" content="Cline 安装 Node.js 启动的 MCP Server 连接失败问题描述在 Windows 环境下，使用 npx 启动 MCP Server 时出现以下错误： 1spawn npx ENOENT spawn npx ENOENT  解决方案将启动方式从 npx 改为 node 启动。 具体步骤 安装依赖：  1npm install -g @modelcontextprotocol&#x2F;ser">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-21T22:51:46.000Z">
-<meta property="article:modified_time" content="2025-04-02T15:35:33.071Z">
+<meta property="article:modified_time" content="2025-04-06T07:43:25.488Z">
 <meta property="article:author" content="chuan">
 <meta property="article:tag" content="mcp">
 <meta property="article:tag" content="ai">
@@ -65,7 +65,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/2025/04/02/%E6%8A%93%E5%8C%85deepseek%E7%9A%84api/"><span class="title">抓包deepseek的api</span></a><a class="item title" href="/2025/03/16/%E6%8A%95%E8%B5%84%E4%B8%AD%E7%9A%84%E6%A6%82%E5%BF%B5%E5%90%8D%E8%AF%8D/"><span class="title">投资中的概念名词</span></a><a class="item title" href="/2025/03/18/%E7%9C%8B%E6%87%82%E9%87%91%E8%9E%8D%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E4%B9%A6/"><span class="title">读书《看懂金融的第一本书》</span></a><a class="item title" href="/2025/03/27/MAGA%E5%92%8C%E7%89%B9%E6%9C%97%E6%99%AE%E6%94%BF%E7%AD%96/"><span class="title">MAGA和特朗普政策</span></a><a class="item title" href="/2020/12/08/Vim-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"><span class="title">Vim 使用说明</span></a><a class="item title" href="/2022/05/28/WebAssembly/"><span class="title">WebAssembly</span></a><a class="item title" href="/2025/03/15/arch%E5%8D%87%E7%BA%A7%E9%97%AE%E9%A2%98/"><span class="title">arch升级问题</span></a><a class="item title" href="/2020/12/17/flask%E7%BB%93%E5%90%88nacos%E5%92%8CGraphQL%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span class="title">flask结合nacos和GraphQL构建微服务</span></a><a class="item title" href="/2020/12/01/hexo%E5%88%9B%E5%BB%BAgitpages/"><span class="title">使用hexo创建github pages</span></a><a class="item title" href="/2025/03/21/mcp%E5%AD%A6%E4%B9%A0/"><span class="title">mcp学习</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/2025/04/02/%E6%8A%93%E5%8C%85deepseek%E7%9A%84api/"><span class="title">抓包deepseek的api</span></a><a class="item title" href="/2025/03/16/%E6%8A%95%E8%B5%84%E4%B8%AD%E7%9A%84%E6%A6%82%E5%BF%B5%E5%90%8D%E8%AF%8D/"><span class="title">投资中的概念名词</span></a><a class="item title" href="/2025/03/18/%E7%9C%8B%E6%87%82%E9%87%91%E8%9E%8D%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E4%B9%A6/"><span class="title">读书《看懂金融的第一本书》</span></a><a class="item title" href="/2025/03/19/%E7%BE%8E%E5%85%83/"><span class="title">美元</span></a><a class="item title" href="/2025/03/27/MAGA%E5%92%8C%E7%89%B9%E6%9C%97%E6%99%AE%E6%94%BF%E7%AD%96/"><span class="title">MAGA和特朗普政策</span></a><a class="item title" href="/2020/12/08/Vim-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"><span class="title">Vim 使用说明</span></a><a class="item title" href="/2025/03/15/arch%E5%8D%87%E7%BA%A7%E9%97%AE%E9%A2%98/"><span class="title">arch升级问题</span></a><a class="item title" href="/2022/05/28/WebAssembly/"><span class="title">WebAssembly</span></a><a class="item title" href="/2020/12/17/flask%E7%BB%93%E5%90%88nacos%E5%92%8CGraphQL%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span class="title">flask结合nacos和GraphQL构建微服务</span></a><a class="item title" href="/2020/12/01/hexo%E5%88%9B%E5%BB%BAgitpages/"><span class="title">使用hexo创建github pages</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -78,7 +78,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/AI/">AI</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2025-03-21T22:51:46.000Z">2025-03-21</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2025-04-02T15:35:33.071Z">2025-04-02</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2025-03-21T22:51:46.000Z">2025-03-21</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2025-04-06T07:43:25.488Z">2025-04-06</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -113,7 +113,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2025/03/23/python%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">python中一些问题</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2025/03/18/%E7%9C%8B%E6%87%82%E9%87%91%E8%9E%8D%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E4%B9%A6/">读书《看懂金融的第一本书》</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2025/03/23/python%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">python中一些问题</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2025/03/19/%E7%BE%8E%E5%85%83/">美元</a></div></section></div>
 
 
 
