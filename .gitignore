@@ -3,5 +3,6 @@
 /.hugo_build.lock
 /tools/
 /themes/papermod.zip
+/.deploy/
 .DS_Store
 Thumbs.db
