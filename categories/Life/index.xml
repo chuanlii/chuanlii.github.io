@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Life on My Personal Site</title><link>https://chuanlii.github.io/categories/life/</link><description>Recent content in Life on My Personal Site</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 21 Jul 2022 15:39:32 +0000</lastBuildDate><atom:link href="https://chuanlii.github.io/categories/life/index.xml" rel="self" type="application/rss+xml"/><item><title>一些工具</title><link>https://chuanlii.github.io/posts/%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7/</link><pubDate>Thu, 21 Jul 2022 15:39:32 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7/</guid><description>&lt;p&gt;win上的免费剪切板工具： Ditto&lt;/p&gt;</description></item><item><title>WebAssembly</title><link>https://chuanlii.github.io/posts/webassembly/</link><pubDate>Sat, 28 May 2022 16:20:51 +0000</pubDate><guid>https://chuanlii.github.io/posts/webassembly/</guid><description>&lt;p&gt;一个WebAssembly例子&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;
+rustc --version 检查是否安装
+rustup 安装和版本管理工具
+Cargo：Rust 的构建工具和包管理器
+rustup update 升级rust
+cargo new hello 创建项目
+cargo build 可以构建项目
+cargo run 可以运行项目
+cargo test 可以测试项目
+cargo doc 可以为项目构建文档
+cargo publish 可以将库发布到 crates.io
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更新cargo 源
+在.cargo/下，创建config文件，配置如下&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;[source.crates-io]
+registry = &amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34;
+replace-with = &amp;#39;ustc&amp;#39;
+[source.ustc]
+registry = &amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;安装wasm-pack
+sudo curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+cargo install cargo-generate
+cargo generate --git https://github.com/rustwasm/wasm-pack-template
+wasm-pack build
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>使用wsl</title><link>https://chuanlii.github.io/posts/%E4%BD%BF%E7%94%A8wsl/</link><pubDate>Sat, 28 May 2022 15:20:57 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E4%BD%BF%E7%94%A8wsl/</guid><description>&lt;p&gt;windows应用商店下载太慢，更新DNS为&lt;code&gt;4.2.2.1&lt;/code&gt;,然后刷新dns&lt;code&gt;ipconfig /flushdns&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;准备阶段&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# /etc/apt/source.list 更新源&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 安装常用软件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install net-tools
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install curl
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# nodejs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install nodejs
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install npm
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;npm config set registry http://npmmirror.com &lt;span style="color:#75715e"&gt;# 换个镜像源&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# go&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar -C /usr/local -xzf goxx-amd64.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 在/etc/profile中加环境变量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;export PATH&lt;span style="color:#f92672"&gt;=&lt;/span&gt;$PATH:/usr/local/go/bin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;source /etc/profile
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# ruby&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install rbenv
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rbenv install --list
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rbenv install 2.7.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ruby&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>

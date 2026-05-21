@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Home on My Personal Site</title><link>https://chuanlii.github.io/</link><description>Recent content in Home on My Personal Site</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 21 May 2026 21:48:00 +0800</lastBuildDate><atom:link href="https://chuanlii.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello</title><link>https://chuanlii.github.io/posts/hello/</link><pubDate>Thu, 21 May 2026 21:48:00 +0800</pubDate><guid>https://chuanlii.github.io/posts/hello/</guid><description>&lt;h1 id="hugo-常用命令与使用方式"&gt;Hugo 常用命令与使用方式&lt;/h1&gt;
+&lt;p&gt;这是一份放在 &lt;code&gt;hello.md&lt;/code&gt; 里的 Hugo 快速使用说明，方便你后面直接边写边查。&lt;/p&gt;
+&lt;h2 id="1-初始化与新建内容"&gt;1. 初始化与新建内容&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 当前项目里使用 Hugo 可执行文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;D:\blog\tools\hugo\hugo.exe version
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 新建一篇文章&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;D:\blog\tools\hugo\hugo.exe new content posts/my-first-post.md
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 新建一个独立页面&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;D:\blog\tools\hugo\hugo.exe new content about.md
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;new content&lt;/code&gt; 会按 Hugo 的 archetype 生成 Markdown 文件。&lt;/li&gt;
+&lt;li&gt;新文章默认位置通常放在 &lt;code&gt;content/posts/&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;如果文章头部 &lt;code&gt;draft = true&lt;/code&gt;，默认不会出现在正式构建中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2-本地预览"&gt;2. 本地预览&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 启动本地开发服务器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;D:\blog\tools\hugo\hugo.exe server
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 连草稿一起预览&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;D:\blog\tools\hugo\hugo.exe server -D
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;启动后访问 &lt;code&gt;http://localhost:1313/&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;修改 &lt;code&gt;content/&lt;/code&gt;、&lt;code&gt;layouts/&lt;/code&gt;、&lt;code&gt;static/&lt;/code&gt; 后，页面通常会自动刷新。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-D&lt;/code&gt; 等价于 &lt;code&gt;--buildDrafts&lt;/code&gt;，适合写草稿时预览。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="3-正式构建"&gt;3. 正式构建&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 生成静态站点文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;D:\blog\tools\hugo\hugo.exe
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 清理目标目录后再构建&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;D:\blog\tools\hugo\hugo.exe --cleanDestinationDir
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用方式：&lt;/p&gt;</description></item><item><title>A股的特点</title><link>https://chuanlii.github.io/posts/a%E8%82%A1%E7%9A%84%E7%89%B9%E7%82%B9/</link><pubDate>Sat, 10 May 2025 17:13:46 +0000</pubDate><guid>https://chuanlii.github.io/posts/a%E8%82%A1%E7%9A%84%E7%89%B9%E7%82%B9/</guid><description>&lt;h1 id="中国股市和美国股市有什么区别"&gt;中国股市和美国股市有什么区别?&lt;/h1&gt;
+&lt;p&gt;要了解中国A股，可以通过对比来找出来特点&lt;/p&gt;
+&lt;p&gt;A股 美股
+投资者:散户占主导 机构占主导
+资本流动: 国际资本流入限制 全球资本自由流动
+监管:透明度低，待继续完善 更高
+交易:T+1 T+0
+波动:有涨跌停限制 个股没有限制&lt;/p&gt;
+&lt;h1 id="a股有什么特点或规律呢"&gt;A股有什么特点或规律呢?&lt;/h1&gt;
+&lt;h3 id="高波动性牛短熊长"&gt;高波动性，牛短熊长&lt;/h3&gt;
+&lt;p&gt;散户占比高，容易情绪化交易，放大波动
+政策会引发快速上涨下跌&lt;/p&gt;
+&lt;h3 id="散户行为主导投机性强"&gt;散户行为主导，投机性强&lt;/h3&gt;
+&lt;p&gt;短期交易频繁，总是追热点，炒作题材
+个人投资者缺乏长期投资理念，都想赚快钱
+市场情绪化，导致股价短期内暴涨暴跌
+市场深度不够，中小市值股票多，容易被资金操纵&lt;/p&gt;
+&lt;h3 id="政策影响大"&gt;政策影响大&lt;/h3&gt;
+&lt;p&gt;政府角色：中国政府通过货币政策、财政政策和资本市场改革引导市场。
+市场不成熟：A股依赖政策信号弥补市场机制不足。
+资本管制：国际资金流动受限，国内政策影响力更大。&lt;/p&gt;
+&lt;h3 id="板块轮动频繁"&gt;板块轮动频繁&lt;/h3&gt;
+&lt;p&gt;政策引导，市场炒作&lt;/p&gt;
+&lt;h1 id="一些反直觉的地方"&gt;一些反直觉的地方&lt;/h1&gt;
+&lt;p&gt;主要是2点，散户主导，政策市。
+散户容易频发交易、从众、受到情绪化影响；
+市场受到政策影响大。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;反直觉方面&lt;/th&gt;
+&lt;th style="text-align: left"&gt;与成熟市场对比/直觉预期&lt;/th&gt;
+&lt;th style="text-align: left"&gt;A股市场表现&lt;/th&gt;
+&lt;th style="text-align: left"&gt;背后原因&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;“政策市”显著&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;公司基本面和宏观经济是主要驱动力。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;政策导向短期内极大影响市场情绪和板块轮动，有时超越基本面。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;中国经济体制中政府的强大调控能力；市场发展初期监管的引导作用。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;散户主导下的情绪化波动&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;机构投资者主导，更偏向理性定价。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;散户交易易受短期消息、传闻和情绪影响，市场波动性较大，股价有时脱离基本面。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;投资知识普及度、投资理念成熟度、信息获取对称性等差异。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;“炒小、新、差、题材”&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;价值投资强调绩优、估值合理的蓝筹股。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;小盘股、新股、绩差股（博重组）、题材股即使缺乏基本面支撑也可能受追捧暴涨。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;资金对短期高回报的追求；部分绩差股的“壳价值”预期；新股发行制度带来的稀缺性溢价。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;高换手率&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;鼓励长期持有，降低交易成本。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;整体换手率全球较高，反映投资者倾向于频繁买卖。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;散户的交易习惯；对短期波动的捕捉意愿；部分投资者将股市视为“提款机”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;新股不败神话（阶段性）&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;新股有涨有跌，定价更为市场化。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;过去新股上市后往往连续涨停，中签如中奖。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;新股发行审批制下供给偏紧；发行定价受限；供需不平衡和炒作预期。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;“喝酒吃药”行情持续性&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;行业轮动，各行业表现相对均衡。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;消费（白酒）和医药板块能走出独立且持续较长的牛市，估值有时很高。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;中国庞大人口和消费升级；医药行业刚需和成长性；龙头公司品牌护城河。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;ST股“乌鸡变凤凰”预期&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;高风险，面临退市。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;部分ST股因重组、借壳预期受投机资金追捧，股价大幅波动。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;过去退市制度执行不够严格，壳资源有价值。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;对数据/财报的“非理性”解读&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;市场对消息的反应相对符合逻辑。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;利好出尽是利空，或对利空过度反应；业绩良好股价反跌也时有发生。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;市场预期的提前消化；信息不对称；主力资金操作意图；投资者情绪复杂影响。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;“大小盘风格”极端切换&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;风格转换相对平缓，与经济周期关联更紧密。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;大小盘风格切换剧烈且持续时间长，并非完全由基本面解释。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;不同类型资金风险偏好差异；市场在不同阶段对成长性与确定性的追求不同。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>市场中的心理</title><link>https://chuanlii.github.io/posts/%E5%B8%82%E5%9C%BA%E4%B8%AD%E7%9A%84%E5%BF%83%E7%90%86/</link><pubDate>Sat, 10 May 2025 15:13:46 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E5%B8%82%E5%9C%BA%E4%B8%AD%E7%9A%84%E5%BF%83%E7%90%86/</guid><description>&lt;h1 id="投机行为有哪些"&gt;投机行为有哪些?&lt;/h1&gt;
+&lt;p&gt;上涨的股票，更倾向于继续上涨?还是倾向于下跌?&lt;/p&gt;
+&lt;h2 id="1追涨杀跌"&gt;1追涨杀跌?&lt;/h2&gt;
+&lt;p&gt;就是在赌会继续上涨，是一种投机行为
+是一种情绪化的非理性投资行为。
+因为受到市场情绪和群体心理，会放大市场波动，导致涨的时候过度的涨，跌的时候过度下跌，进而恶性循环，增加波动性。&lt;/p&gt;
+&lt;h5 id="为什么追涨杀跌会亏钱"&gt;为什么追涨杀跌会亏钱?&lt;/h5&gt;
+&lt;p&gt;比如价值100，可能会增长20%，但是因为是过度上涨了30%，后面可能会下跌回归到120，所以买入很可能买在高点。
+下跌也是，下跌后就卖掉离场，导致错过反弹。&lt;/p&gt;
+&lt;h5 id="波动大也未尝不是个优点"&gt;波动大也未尝不是个优点&lt;/h5&gt;
+&lt;p&gt;既然由于散户的追涨杀跌导致股价大幅波动，那就代表会出现股价会下跌过度的情况，那就可以利用这一点。
+此时如果在过度下跌的时候抄底，就能获得更多的利润。&lt;/p&gt;
+&lt;p&gt;不过难的一点在于，怎么判断什么时候算是下跌到底部了?什么时候是跌到半山腰了?&lt;/p&gt;
+&lt;h2 id="2-打新投机"&gt;2 打新投机&lt;/h2&gt;
+&lt;p&gt;期望新股会上涨&lt;/p&gt;
+&lt;h2 id="3-题材炒作"&gt;3 题材炒作&lt;/h2&gt;
+&lt;p&gt;题材炒作往往能在短期内带来巨大的收益，但题材的热度往往难以持续，一旦市场热点转移，股价可能会大幅下跌，投资者如果不能及时获利了结，就容易遭受损失。&lt;/p&gt;
+&lt;h1 id="4短线交易频繁交易"&gt;4短线交易，频繁交易&lt;/h1&gt;
+&lt;h1 id="市场情绪"&gt;市场情绪&lt;/h1&gt;
+&lt;p&gt;对市场的态度：
+乐观
+中性
+悲观&lt;/p&gt;
+&lt;p&gt;群体会放大个人情绪，变成市场情绪。
+导致波动更大，反应更快。&lt;/p&gt;
+&lt;p&gt;下跌时，短时间内，出现超跌。跌过实际价值。
+可能会导致熔断、崩盘。&lt;/p&gt;
+&lt;p&gt;上涨时，短时间内，出现超涨。超过实际价值。
+可能会产生泡沫、杠杆。&lt;/p&gt;
+&lt;h1 id="群体心理"&gt;群体心理　&lt;/h1&gt;
+&lt;h3 id="羊群效应跟风操作缺乏理性思考"&gt;羊群效应：跟风操作，缺乏理性思考&lt;/h3&gt;
+&lt;h3 id="过度自信高估自己的能力"&gt;过度自信：高估自己的能力&lt;/h3&gt;
+&lt;h3 id="厌恶损失-更加难以忍受损失"&gt;厌恶损失： 更加难以忍受损失&lt;/h3&gt;
+&lt;h3 id="锚定效应锚定于买入成本"&gt;锚定效应，锚定于买入成本&lt;/h3&gt;
+&lt;p&gt;将最初的信息作为后续判定的依据&lt;/p&gt;
+&lt;h3 id="负面消息过度反应"&gt;负面消息过度反应：&lt;/h3&gt;
+&lt;p&gt;导致出现超跌&lt;/p&gt;
+&lt;h1 id="应对情况"&gt;应对情况&lt;/h1&gt;
+&lt;p&gt;平衡：
+评估市场风险，选择持有，或切到收益更高的地方&lt;/p&gt;
+&lt;p&gt;亏损：
+如果看好，但有更好的机会，即使亏损也要卖出，然后买入更有潜力的。
+如果非常看好，那就不动，或加仓
+如果不看好，就清仓&lt;/p&gt;
+&lt;p&gt;盈利
+如果看好，就等待不动
+如果不看好，就卖掉，落地为安&lt;/p&gt;
+&lt;h1 id="为什么会反人性"&gt;为什么会反人性&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;方面 (Aspect)&lt;/th&gt;
+&lt;th style="text-align: left"&gt;人性表现 (Human Tendency)&lt;/th&gt;
+&lt;th style="text-align: left"&gt;股市“反人性”要求 (Counter-intuitive Trading Requirement)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;克服贪婪与恐惧&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;追求更多，易贪婪；面临不确定性和潜在损失时，易恐惧。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;在他人贪婪时警惕风险，在他人恐惧时冷静分析机会。盈利很多就卖掉；低点就要抓住机会抄底。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;对抗羊群效应&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;社会性动物，有强烈的从众心理，倾向于跟随大多数人以获得安全感。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;独立思考，不盲从多数，甚至做出与大众相反的决策（逆向投资）。大家都在买黄金，就不要跟着买了。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;接受不确定性与概率思维&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;渴望确定性，喜欢明确答案和可预测结果，对模糊和概率感到不适。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;接受市场本质的不确定性，运用概率思维，理解亏损是交易的一部分，关注长期整体盈利概率。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;克服损失厌恶&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;对损失的痛苦远大于同等收益的快乐；倾向于死扛亏损股，过早卖出盈利股。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;及时止损，承认判断失误，让盈利头寸“自由奔跑”。勇敢“割肉”，坦然面对亏损。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;延迟满足与长期视角&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;倾向于即时满足，希望快速看到结果，对短期利益更敏感。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;需要耐心和长期坚持，抵制频繁操作、追涨杀跌的诱惑，坚持既定策略和长远目标。要长远看。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;客观自省与承认错误&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;有自我辩护倾向，不愿承认错误，易将成功归因于己，失败归咎于外。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;客观复盘交易，勇于承认并从错误中学习，不断完善交易系统和心态。承认自己的不足，才能进步。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;对抗过度自信与确认偏误&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;易高估自身能力（过度自信）；倾向于寻找支持自己观点的信息，忽略相反信息（确认偏误）。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;保持谦逊，敬畏市场，主动寻找不同观点进行批判性思考，避免主观偏见。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;纪律性执行&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;情绪波动时，易偏离原有计划和规则，做出冲动性决策。&lt;/td&gt;
+&lt;td style="text-align: left"&gt;无论市场如何波动、情绪如何起伏，都严格执行既定的交易计划（入场、出场、止损、仓位管理等），需要极强自控力。不要一时冲动就去交易操作。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id="要做的哪些"&gt;要做的哪些&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;逆势操作&lt;/strong&gt;&lt;br&gt;
+在市场普遍恐慌时买入，别人贪婪时卖出。比如，巴菲特在2008年金融危机时逆势投资，最终获得巨大回报，这正是“反人性”的典型体现。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;独立思考&lt;/strong&gt;&lt;br&gt;
+不盲从市场情绪或热门观点，而是基于数据和基本面分析做出决策，避免被群体情绪裹挟。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;情绪控制&lt;/strong&gt;&lt;br&gt;
+保持冷静，不因短期波动而动摇，专注于长期目标，而不是被当下的恐惧或贪婪支配。&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>投资记录2504</title><link>https://chuanlii.github.io/posts/%E6%8A%95%E8%B5%84%E8%AE%B0%E5%BD%952504/</link><pubDate>Mon, 05 May 2025 21:55:33 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E6%8A%95%E8%B5%84%E8%AE%B0%E5%BD%952504/</guid><description>&lt;p&gt;概括一下，4月初关税战，然后立即清明节，然后节后4月7号8号因为关税问题暴跌，然后就陆续反弹。黄金也在到达3500美元每盎司后，大跌，跌回了3200多。&lt;/p&gt;
+&lt;h1 id="失误"&gt;失误&lt;/h1&gt;
+&lt;p&gt;3月底一直在波动，属于垃圾时间，反而还有风险，应该空仓等待机会。但是没有离场，导致利润都亏完了。&lt;/p&gt;
+&lt;p&gt;最大的不确定性就是特朗普。懂王当选后，要有一个预期:会准备下一轮的贸易战。
+懂王在3月4日就发表过4月2日会征收对等关税，所以4月会存在风险。没有预料到这个，导致没有及时离场，导致损失惨重。&lt;/p&gt;
+&lt;p&gt;4月7日,8日，应该趁低点进场，但是没有大量进场，导致没有抓住机会。(当时顾虑会继续下跌，实际在4月8日上证就反弹了，应该可以进入了)&lt;/p&gt;
+&lt;p&gt;黄金上涨剧烈，每天都在涨，风险也在增加。但是当时觉得股票会反弹的更多，所以没有买入。后面网上很多人都在炒作黄金了，这时候就应该退出离场。没有离场，反而加仓，导致出现了亏损。&lt;/p&gt;
+&lt;h1 id="最佳投资能收益多少"&gt;最佳投资能收益多少?&lt;/h1&gt;
+&lt;p&gt;假如在4月7,8号入场，持有到大概月末，各种不同投资收益如下:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;数值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;黄金&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;山东黄金&lt;/td&gt;
+&lt;td&gt;16，高点卖出就是32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;紫金矿业&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;华友钴业&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;机器人etf&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;双环传动&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;科创50&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;科创etf&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;沪深300&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;立讯精密&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;银行etf&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;小米&lt;/td&gt;
+&lt;td&gt;37&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;比亚迪&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;恒生科技&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;军工&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;创新药&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;美的&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;常山北明&lt;/td&gt;
+&lt;td&gt;22&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;拓维信息&lt;/td&gt;
+&lt;td&gt;36&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;药明康德&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;最高的是拓维信息,紫金矿业(挖黄金的)，小米等。平均也有10的收益率。&lt;/p&gt;
+&lt;p&gt;最保险的策略应该是买科创芯片etf等，这些因为有国产替代，反而利好。起码可以跑赢平均的收益率。而且跌了很多，当时应该加仓。&lt;/p&gt;
+&lt;p&gt;黄金一直在涨，当时可以买入大量的山东黄金,紫金矿业等，比黄金涨的更多，在网上看到有人买黄金的消息时，就应该立刻退出。&lt;/p&gt;
+&lt;p&gt;还有一个大幅下跌的是小米，事实也证明小米是值得投资的，反弹也大幅反弹了。&lt;/p&gt;
+&lt;p&gt;期间港股有一个泡泡玛特，涨到特别多，但是不知道什么时候泡沫会破裂。不过破裂后，在低谷后，可以考虑买入。&lt;/p&gt;
+&lt;p&gt;军工,银行,沪深300等，相对涨幅不大，投资的话赶不上平均收益。&lt;/p&gt;
+&lt;h1 id="开始想象"&gt;开始想象&lt;/h1&gt;
+&lt;p&gt;开始空仓，到4.7,4.8，然后满仓进去(再下跌也没事，亏不了多少)。满仓进入科创etf中，起码有10个点的收益。
+在4.14反弹1周后，回到了关税战开始前的水平了，此时差不多不会继续增长了。&lt;/p&gt;
+&lt;p&gt;黄金还在一直上涨，这时买入山东黄金或黄金，还得增加5到10个点; 或者找一下，哪些还没用回到3月30号的位置的，也可以买入，之后就离场就行了。&lt;/p&gt;
+&lt;p&gt;然后就等有没有重大利好消息，然后再进场。&lt;/p&gt;
+&lt;p&gt;这样就有至少15个点收益了。&lt;/p&gt;
+&lt;h2 id="最后"&gt;最后&lt;/h2&gt;
+&lt;p&gt;如果买了小米或山东黄金(黄金A股都涉及了)，再高点卖出，那就是30多个点了!&lt;/p&gt;
+&lt;p&gt;另外加密货币，以后也许可以考虑。没准懂王有什么操作，导致trump币升值? 但是真买这个就相当于支持懂王了。&lt;/p&gt;</description></item><item><title>美债</title><link>https://chuanlii.github.io/posts/%E7%BE%8E%E5%80%BA/</link><pubDate>Wed, 09 Apr 2025 21:48:46 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E7%BE%8E%E5%80%BA/</guid><description>&lt;h1 id="什么是美债"&gt;什么是美债？&lt;/h1&gt;
+&lt;p&gt;期限：美债有短期1年内的，中期（1-10年），长期国债（10年+）。&lt;/p&gt;
+&lt;p&gt;付息方式： 固定利率，浮动利率&lt;/p&gt;
+&lt;p&gt;各种类型的美债占比多少？&lt;/p&gt;
+&lt;h1 id="美债存在的风险"&gt;美债存在的风险&lt;/h1&gt;
+&lt;p&gt;利率风险：
+市场利率升高了，新的美债利率很高，而持有的旧的美债利率不变，就相对降低了， 旧的美债价格就会下降。&lt;/p&gt;
+&lt;p&gt;通货膨胀：
+通货膨胀相当于钱贬值，美债的收益就会下降了。&lt;/p&gt;
+&lt;h1 id="美债债务压力"&gt;美债债务压力&lt;/h1&gt;
+&lt;p&gt;规模：
+36万亿美元， 占gdp的124%&lt;/p&gt;
+&lt;p&gt;利息：
+1.13万亿美元，3.32利率&lt;/p&gt;
+&lt;p&gt;赤字：&lt;/p&gt;
+&lt;p&gt;到期债务：&lt;/p&gt;
+&lt;h1 id="政府如何化债"&gt;政府如何化债&lt;/h1&gt;
+&lt;p&gt;1 进行债务重组
+与债权人协商延长还款期限，降低利率，分期偿还
+2 财政增收
+加关税、税收优化、国企利润上缴
+3 置换债券
+发行低息长期债券，换取高息短期债券
+4 资产变现
+出售国有资产等&lt;/p&gt;
+&lt;h1 id="美国可能还债方式"&gt;美国可能还债方式&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;还债方式&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;核心手段&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;影响&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;可操作性&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;效果&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;增税&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;提高个人所得税、企业税、资本利得税等税率，扩大税基（如对富人阶层、跨国企业加税）&lt;/td&gt;
+&lt;td&gt;短期增加财政收入，但可能抑制消费与投资，影响企业竞争力；引发民众及企业反对，政治阻力大&lt;/td&gt;
+&lt;td&gt;需国会通过，两党分歧下难以达成共识（共和党传统反对增税，民主党支持对富人加税）&lt;/td&gt;
+&lt;td&gt;长期可持续性取决于税率调整幅度，若过度增税可能拖累经济增长，反而影响税基扩大&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;削减政府开支&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;缩减非必要支出，如国防预算、社会福利（医保、社保）、行政开支等&lt;/td&gt;
+&lt;td&gt;直接减少财政赤字，但可能引发社会不满（如削减福利影响低收入群体），国防削减面临军工集团压力&lt;/td&gt;
+&lt;td&gt;受政治博弈影响大，两党对 “非必要开支” 定义分歧严重，难以达成实质性削减&lt;/td&gt;
+&lt;td&gt;短期可缓解债务压力，但长期可能削弱公共服务与基建投资，损害经济潜力&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;推动经济增长&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;加大基建投资、鼓励创新（研发补贴）、降低企业税负以刺激投资与就业&lt;/td&gt;
+&lt;td&gt;经济增速提升可扩大税基，增加税收收入；提升长期偿债能力，减少债务 / GDP 比值&lt;/td&gt;
+&lt;td&gt;需长期投入，政策效果滞后；可能依赖财政赤字融资，短期内加剧债务规模&lt;/td&gt;
+&lt;td&gt;长期最健康的方式，但需解决结构性问题（如劳动参与率、生产率增长）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;债务重组与展期&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;与债权人协商延长债务期限、降低利率，或发行长期债券置换短期债务&lt;/td&gt;
+&lt;td&gt;缓解短期偿债压力，降低利息支出；但可能影响美国信用评级，推高未来融资成本&lt;/td&gt;
+&lt;td&gt;需债权人（如外国央行、机构投资者）配合，美元霸权下部分债权人可能被迫接受&lt;/td&gt;
+&lt;td&gt;短期有效，长期需以信用为代价，可能导致未来融资难度增加&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;量化宽松（印钞）&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;美联储通过购买国债向市场注入流动性，压低利率，间接为政府融资&lt;/td&gt;
+&lt;td&gt;短期降低融资成本，稀释债务实际价值；但引发通胀风险，损害美元信用，加剧国际去美元化&lt;/td&gt;
+&lt;td&gt;美联储保持独立性，需权衡通胀与就业目标，2023 年后加息周期中实施难度上升&lt;/td&gt;
+&lt;td&gt;短期缓解流动性危机，长期可能导致恶性通胀或货币体系动荡&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;通胀稀释债务&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;通过政策放任或推动通胀，使债务实际价值缩水（因偿还时货币购买力下降）&lt;/td&gt;
+&lt;td&gt;债权人（尤其是外国持有者）财富转移至美国政府；推高国内生活成本，引发民众不满&lt;/td&gt;
+&lt;td&gt;无需立法程序，依赖货币政策宽松，但美联储需承担通胀失控风险&lt;/td&gt;
+&lt;td&gt;隐蔽性强，短期有效，但长期损害美元信誉，可能导致资本外流&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;资产出售&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;抛售政府持有的资产（如国有土地、基础设施、金融资产等）&lt;/td&gt;
+&lt;td&gt;快速回笼资金，减少债务规模；但可能低价贱卖优质资产，损害长期公共利益&lt;/td&gt;
+&lt;td&gt;受资产类型与市场环境限制，大规模出售需复杂流程，政治阻力（如反对私有化）&lt;/td&gt;
+&lt;td&gt;一次性短期工具，无法解决结构性债务问题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;国际援助 / 转嫁压力&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;要求盟友分担军费、通过国际组织（如 IMF）融资，或迫使其他国家增持美债&lt;/td&gt;
+&lt;td&gt;利用霸权地位分摊成本；但盟友对美国信任下降，国际组织融资附带条件（如财政紧缩）&lt;/td&gt;
+&lt;td&gt;依赖美国国际影响力，当前多国去美元化趋势下难度增加&lt;/td&gt;
+&lt;td&gt;短期缓解压力，长期削弱国际领导力与美元地位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;财政货币化&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;政府与央行直接配合，央行直接为财政赤字融资（如 “现代货币理论” MMT 实践）&lt;/td&gt;
+&lt;td&gt;绕过市场融资，理论上可无限偿还债务；但彻底颠覆货币纪律，引发恶性通胀风险&lt;/td&gt;
+&lt;td&gt;需打破央行独立性传统，面临法律与政治争议（如美联储法定独立性限制）&lt;/td&gt;
+&lt;td&gt;极端情况下的 “最后手段”，可能导致货币体系崩溃&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id="量化宽松是什么"&gt;量化宽松是什么？&lt;/h1&gt;
+&lt;p&gt;中央银行近似零利率，购买中长期证券，增加基础货币供给，向市场注入大量流动性，鼓励借贷，刺激经济增长。&lt;/p&gt;</description></item><item><title>黄金</title><link>https://chuanlii.github.io/posts/%E9%BB%84%E9%87%91/</link><pubDate>Tue, 08 Apr 2025 00:31:21 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E9%BB%84%E9%87%91/</guid><description>&lt;h1 id="增加关税前黄金为什么涨"&gt;增加关税前，黄金为什么涨？&lt;/h1&gt;
+&lt;p&gt;其中一个原因：大家预期美国会对进口黄金加税，假设当前1g100元，预期1个月加税后，美国国内要买1g黄金就要花费110美元。
+所以现在大家都会提前买黄金，导致推高到105美元。随着羊群效应、盲目从众，大家都买，导致价格涨到110美元，推动上涨。&lt;/p&gt;
+&lt;h1 id="特点"&gt;特点&lt;/h1&gt;
+&lt;p&gt;黄金是抗通胀属性和避险属性的资产&lt;/p&gt;
+&lt;h1 id="增加关税后黄金是避险属性的资产这种情况下不应该涨吗"&gt;增加关税后，黄金是避险属性的资产，这种情况下不应该涨吗？&lt;/h1&gt;
+&lt;p&gt;此时短期流动性危机大于避险需求。
+短期价格下跌，因为市场上的杠杆投资面临流动性危机，因为加杠杆必须要有一定比例的保证金，亏损先亏损保证金。最近股市下跌，导致为了不被平仓，被迫卖出黄金，都在卖，就导致黄金价格下跌。&lt;/p&gt;
+&lt;p&gt;长期才会体现真正的避险属性。
+流动性危机过去后，会体现作为真正的避险资产的属性。&lt;/p&gt;
+&lt;h1 id="未来趋势"&gt;未来趋势：&lt;/h1&gt;
+&lt;h2 id="是通胀利多"&gt;是通胀，利多：&lt;/h2&gt;
+&lt;p&gt;货币贬值，黄金因为稀缺性和非信用属性（不依赖政府或机构信用），天然是货币的 “替代品”。保值。硬资产。&lt;/p&gt;
+&lt;h2 id="是经济衰退利空"&gt;是经济衰退,利空&lt;/h2&gt;
+&lt;p&gt;流动性危机，导致黄金价格下跌。
+通货紧缩，物价下跌，现金购买力上升，黄金保值需求下降。
+工业衰退，对黄金需求下跌。（黄金有10%用于工业需求）&lt;/p&gt;
+&lt;h1 id="总结"&gt;总结&lt;/h1&gt;
+&lt;p&gt;黄金并非绝对的 “避险万能资产”，其价格会随市场对通胀 - 衰退 - 流动性的预期变化而波动，需要结合具体经济环境和市场情绪综合判断&lt;/p&gt;</description></item><item><title>广场协议</title><link>https://chuanlii.github.io/posts/%E5%B9%BF%E5%9C%BA%E5%8D%8F%E8%AE%AE/</link><pubDate>Sun, 06 Apr 2025 23:55:33 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E5%B9%BF%E5%9C%BA%E5%8D%8F%E8%AE%AE/</guid><description>&lt;h1 id="前因"&gt;前因&lt;/h1&gt;
+&lt;p&gt;德日经济崛起，美国进入贸易逆差，美国逆差来源，主要是德国和日本
+日美贸易战，进入逆全球化&lt;/p&gt;
+&lt;h1 id="上半场"&gt;上半场&lt;/h1&gt;
+&lt;p&gt;1985年
+内容：美元贬值，其他国家升值
+各国：日本根据以往的经验，觉得没问题，升的多；欧洲升的少
+市场：市场失控，日元升值了50%，超过预期&lt;/p&gt;
+&lt;h1 id="下半场卢浮宫协议"&gt;下半场，卢浮宫协议&lt;/h1&gt;
+&lt;p&gt;1987年
+背景：美国贸易逆差没有缓解，要求各国刺激内需
+各国：德国打太极，稍微刺激；日本激进刺激，推动地产和金融自由化
+影响：日本进一步加大泡沫&lt;/p&gt;
+&lt;h1 id="泡沫破裂"&gt;泡沫破裂&lt;/h1&gt;
+&lt;p&gt;1990年
+背景：冷战结束，防止资金外逃，美国加息
+日本：日本也跟着加息，股市泡沫破裂，接着房价崩盘，硬着陆
+后续：行业坏账高企，企业外迁，内需疲软，人口老龄化加剧，社会信心受损，失去30年&lt;/p&gt;
+&lt;h1 id="启示"&gt;启示&lt;/h1&gt;
+&lt;p&gt;1 货币政策和财政刺激需谨慎，防止资产泡沫。
+2 人口结构变化对经济长期影响巨大
+3 加强金融监管
+4 日本太傲慢，没有危机意识，过于乐观看不到风险&lt;/p&gt;</description></item><item><title>特里芬难题</title><link>https://chuanlii.github.io/posts/%E7%89%B9%E9%87%8C%E8%8A%AC%E9%9A%BE%E9%A2%98/</link><pubDate>Sun, 06 Apr 2025 16:27:31 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E7%89%B9%E9%87%8C%E8%8A%AC%E9%9A%BE%E9%A2%98/</guid><description>&lt;h1 id="1-布雷顿森林体系"&gt;1 布雷顿森林体系&lt;/h1&gt;
+&lt;p&gt;美元与黄金挂钩，其他国家货币与美元挂钩&lt;/p&gt;
+&lt;h2 id="特里芬难题"&gt;特里芬难题&lt;/h2&gt;
+&lt;p&gt;信用问题和流动性问题，不能都满足。&lt;/p&gt;
+&lt;p&gt;增发美元，但黄金不会增加，美元不能与黄金挂钩，美元就有信用问题
+不增发美元，世界经济发展需要更多的美元进行国际结算，美元不够就会阻碍经济发展，大家就不用美元了，地位不保。&lt;/p&gt;
+&lt;p&gt;增发不增发，都会地位不保。&lt;/p&gt;
+&lt;p&gt;最后导致该体系瓦解&lt;/p&gt;
+&lt;h1 id="2-牙买加体系"&gt;2 牙买加体系&lt;/h1&gt;
+&lt;p&gt;汇率制度多样化&lt;/p&gt;
+&lt;p&gt;黄金非货币化，&lt;/p&gt;
+&lt;p&gt;储备货币多元化&lt;/p&gt;
+&lt;p&gt;扩大特别提款权（SDR）&lt;/p&gt;
+&lt;h1 id="3-sdr"&gt;3 SDR&lt;/h1&gt;
+&lt;p&gt;SDR 是国际货币基金组织（IMF）发的虚拟额度，价值由一篮子货币决定。
+每个国家有一定的份额（就是贷款额度，要付利息），可以用来向其他国家借钱&lt;/p&gt;
+&lt;p&gt;对小国：可以拿这个额度借钱
+对大国：可以借出去，换回来利息&lt;/p&gt;
+&lt;h1 id="4-美元如何作为世界货币的"&gt;4 美元如何作为世界货币的？&lt;/h1&gt;
+&lt;p&gt;提供流动性+信用&lt;/p&gt;
+&lt;p&gt;美国贸易逆差必须的，因为要保证随着经济发展，世界上要有足够多的美元，作为外汇储备货币。&lt;/p&gt;
+&lt;p&gt;那就只能维护美元地位，维持美元信用。
+锚定石油（中东不稳
+经济实力，经济规模，技术，金融霸权（中国竞争，实力下降
+军事实力（中国竞争，实力下降
+稳定：低通胀/汇率稳定/政治稳定独立&lt;/p&gt;
+&lt;h1 id="5-美元作为世界货币的挑战"&gt;5 美元作为世界货币的挑战&lt;/h1&gt;
+&lt;p&gt;稳定性：美元信用透支，美债膨胀，滥用金融制裁，导致俄罗斯等去美元化
+军事实力：下滑
+经济实力：下滑&lt;/p&gt;
+&lt;h1 id="6-全球贸易体系重组用户指南"&gt;6 《全球贸易体系重组用户指南》&lt;/h1&gt;
+&lt;p&gt;目标：
+维持储备货币的地位，建立新的体系
+美元贬值，制造业回流&lt;/p&gt;
+&lt;p&gt;美国开征关税，其他国家选择：
+1 货币贬值：美国国内还是可以便宜买到商品，其他国家贬值后，本国购买力下降。
+2 对等关税：
+3 认怂：和美国签订类似广岛协议，其他国家相对美元汇率升值，美元贬值，购买美国长期无息国债，化解美国债务问题。
+同时美元贬值，制造业回流，经济实力增强。&lt;/p&gt;</description></item><item><title>区域</title><link>https://chuanlii.github.io/posts/%E5%9C%B0%E7%BC%98%E6%94%BF%E6%B2%BB/</link><pubDate>Sat, 05 Apr 2025 23:52:30 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E5%9C%B0%E7%BC%98%E6%94%BF%E6%B2%BB/</guid><description>&lt;h1 id="几块重要区域"&gt;几块重要区域&lt;/h1&gt;
+&lt;p&gt;根据宗教、文化、地理等，分为以下几个区域：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;俄罗斯：军事大国，资源丰富&lt;/li&gt;
+&lt;li&gt;东亚-日韩：朝韩对立，制造业半导体发达&lt;/li&gt;
+&lt;li&gt;南亚-印度：人口大国，潜力高&lt;/li&gt;
+&lt;li&gt;东南亚-东盟：低端制造业，南海问题&lt;/li&gt;
+&lt;li&gt;美国-五眼联盟&lt;/li&gt;
+&lt;li&gt;拉丁美洲：存在感弱，资源丰富，锂、石油、矿，农业&lt;/li&gt;
+&lt;li&gt;欧盟-欧洲：多极之一&lt;/li&gt;
+&lt;li&gt;中东-伊斯兰世界：石油，巴以冲突，伊斯兰，战争，恐怖主义&lt;/li&gt;
+&lt;li&gt;撒哈拉以南非洲：不稳定，落后，资源丰富，经济殖民地&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="重要的矛盾冲突"&gt;重要的矛盾冲突&lt;/h1&gt;
+&lt;h3 id="亚太"&gt;亚太&lt;/h3&gt;
+&lt;p&gt;中美竞争
+韩朝半岛
+台湾问题
+南海问题
+中印边界&lt;/p&gt;
+&lt;h3 id="欧洲"&gt;欧洲&lt;/h3&gt;
+&lt;p&gt;俄乌冲突-北约东扩：俄罗斯和西方对立
+巴尔干：塞尔维亚与科索沃&lt;/p&gt;
+&lt;h3 id="中东"&gt;中东&lt;/h3&gt;
+&lt;p&gt;巴以冲突
+伊朗核问题
+叙利亚内战
+也门内战
+教派矛盾：什叶派（伊朗）与逊尼派（沙特）&lt;/p&gt;
+&lt;h3 id="南亚"&gt;南亚&lt;/h3&gt;
+&lt;p&gt;印巴克什米尔冲突&lt;/p&gt;
+&lt;h3 id="非洲"&gt;非洲&lt;/h3&gt;
+&lt;p&gt;非洲各种内战冲突&lt;/p&gt;</description></item><item><title>抓包deepseek的api</title><link>https://chuanlii.github.io/posts/%E6%8A%93%E5%8C%85deepseek%E7%9A%84api/</link><pubDate>Wed, 02 Apr 2025 23:07:19 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E6%8A%93%E5%8C%85deepseek%E7%9A%84api/</guid><description>&lt;h1 id="问题"&gt;问题：&lt;/h1&gt;
+&lt;p&gt;直接请求deepseek的api，回答的内容和通过cline返回的结果有很多区别，比如问今天几号，前者会回答以前的时间。&lt;/p&gt;
+&lt;p&gt;通过抓包来验证一些，promot有什么区别。&lt;/p&gt;
+&lt;h1 id="抓包https包"&gt;抓包https包&lt;/h1&gt;
+&lt;p&gt;1 装个 mitmproxy， 启动mitmweb.exe
+这个按中间人攻击的方式实现的，还需要装个ca证书&lt;/p&gt;
+&lt;p&gt;2 打开设置，将系统代理设置为mitmproxy的端口
+3 下载证书
+打开 &lt;a href="https://mitm.it"&gt;https://mitm.it&lt;/a&gt;, 下载windows的证书，安装（不用设置密码）
+4 在mitmweb的Flow list中，根据关键词过滤deepseek。&lt;/p&gt;
+&lt;h1 id="验证"&gt;验证&lt;/h1&gt;
+&lt;p&gt;直接请求api，模型是不知道时间的。问今天几号也不知道。&lt;/p&gt;
+&lt;p&gt;通过cline请求，cline会带上非常长的system的prompt，有好几万的token。user的promot中，还会带上环境详情（包括时间等）。
+下一次提问时，cline会把历史的ai和user的对话都带上传过去，每次都要几十k的数据。&lt;/p&gt;
+&lt;p&gt;MCP：通过抓包发行，启动mcp后，cline会在系统prompt中，加上mcp的详细描述，每个方法参数等，之后还带上了一个查询天气的mcp的使用示例。&lt;/p&gt;</description></item><item><title>欧元</title><link>https://chuanlii.github.io/posts/%E6%AC%A7%E5%85%83/</link><pubDate>Sun, 30 Mar 2025 21:17:18 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E6%AC%A7%E5%85%83/</guid><description>&lt;p&gt;目前全世界都在使用美元，也被美元进行了收割。&lt;/p&gt;
+&lt;p&gt;能不能大家用一种不被收割的货币？ 欧元是有欧盟多个国家共同使用的，不存在这种铸币税，那能不能有一种世界货币，像欧元一样？&lt;/p&gt;
+&lt;h1 id="一些概念"&gt;一些概念&lt;/h1&gt;
+&lt;h1 id="欧盟和欧元区"&gt;欧盟和欧元区&lt;/h1&gt;
+&lt;p&gt;欧盟有27个成员国，欧元区是欧盟的子集，部分国家不在欧元区。
+欧元区内的国家有义务遵循更加严格的预算和债务规定，以维持货币稳定&lt;/p&gt;</description></item><item><title>MAGA和特朗普政策</title><link>https://chuanlii.github.io/posts/maga%E5%92%8C%E7%89%B9%E6%9C%97%E6%99%AE%E6%94%BF%E7%AD%96/</link><pubDate>Thu, 27 Mar 2025 23:34:19 +0000</pubDate><guid>https://chuanlii.github.io/posts/maga%E5%92%8C%E7%89%B9%E6%9C%97%E6%99%AE%E6%94%BF%E7%AD%96/</guid><description>&lt;h1 id="政治"&gt;政治&lt;/h1&gt;
+&lt;h2 id="maga"&gt;MAGA&lt;/h2&gt;
+&lt;p&gt;maga群体 白人、中老年、教育程度较低、农村或小城镇地区。
+白人蓝领工人，底层白人、中产。
+反建制派选民
+极右翼&lt;/p&gt;
+&lt;h2 id="深层政府"&gt;深层政府&lt;/h2&gt;
+&lt;p&gt;由一些官僚、军事、情报、金融等领域的精英组成的非正式权利网络。该群体掌握关键职位和资源，实际操控国家政策。
+比如军工复合体推动军事干预，或金融集团维护宽松监管&lt;/p&gt;
+&lt;h2 id="觉醒文化woke-culture"&gt;觉醒文化（Woke Culture）&lt;/h2&gt;
+&lt;p&gt;是对系统性不平等、歧视和权力结构的批判性反思，强调对边缘群体的权益保护。
+就是政治正确、lgbtq+群体，女权、动保等。&lt;/p&gt;
+&lt;h2 id="民主党共和党"&gt;民主党&amp;amp;共和党&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;维度&lt;/th&gt;
+&lt;th&gt;共和党（GOP）&lt;/th&gt;
+&lt;th&gt;民主党（Democrats）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;核心理念&lt;/td&gt;
+&lt;td&gt;传统资本主义秩序&lt;/td&gt;
+&lt;td&gt;进步主义治理架构&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;经济主张&lt;/td&gt;
+&lt;td&gt;自由市场至上（减税、去监管）&lt;/td&gt;
+&lt;td&gt;政府干预经济（福利、环保投资）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;社会文化&lt;/td&gt;
+&lt;td&gt;保守传统（宗教、反&amp;quot;觉醒文化&amp;quot;）&lt;/td&gt;
+&lt;td&gt;多元进步（LGBTQ+、种族平等）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;国家机器&lt;/td&gt;
+&lt;td&gt;强权政府（军警、边境管控）&lt;/td&gt;
+&lt;td&gt;制度性公平（司法改革、移民包容）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;外交政策&lt;/td&gt;
+&lt;td&gt;单边主义（美国优先、强硬对抗）&lt;/td&gt;
+&lt;td&gt;全球主义（多边合作、气候协议）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;代表群体&lt;/td&gt;
+&lt;td&gt;石油军工集团、福音派、小企业主&lt;/td&gt;
+&lt;td&gt;科技金融资本、工会、城市精英&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;选民基础&lt;/td&gt;
+&lt;td&gt;白人蓝领、乡村、南方保守派&lt;/td&gt;
+&lt;td&gt;少数族裔、年轻群体、沿海都市&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;深层逻辑&lt;/td&gt;
+&lt;td&gt;维护能源-军工霸权体系&lt;/td&gt;
+&lt;td&gt;构建数字-金融新霸权&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;共和党 = 传统能源/军工资本的利益捍卫者&lt;/p&gt;
+&lt;p&gt;民主党 = 新兴科技/金融资本的规则制定者
+通过“左右轮替”维持系统稳定，但共同服务于资本扩张的核心逻辑&lt;/p&gt;
+&lt;h2 id="maga政策"&gt;maga政策&lt;/h2&gt;
+&lt;p&gt;从经济上来说：
+外来移民会抢夺底层白人的工作，所以maga反对外来移民。
+因为全球化，外国工人会争夺美国的工作，所以maga反外国工人，反对全球化，所以与全球化的资本对立。
+因为底层白人受教育程度不高，所以比较保守传统，反对lagtq+，反对觉醒文化等。
+因为来自传统工业区的白人蓝领工人，涉及传统能源、制造业，而新能源会导致他们失业，所以反对新能源，反对环保。&lt;/p&gt;
+&lt;p&gt;所有的政策来源，都来自于有价值的选票群体的，自身的经济和阶级诉求。&lt;/p&gt;
+&lt;h1 id="经济"&gt;经济&lt;/h1&gt;
+&lt;h2 id="美联储的目标"&gt;美联储的目标&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;最大化就业：通过调节货币政策促进充分就业，降低失业率。
+稳定物价：控制通货膨胀（通常以2%年通胀率为目标），避免物价剧烈波动。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="特朗普政策"&gt;特朗普政策&lt;/h2&gt;
+&lt;p&gt;目标：减少贸易逆差、保护美国产业（解决就业）&lt;/p&gt;
+&lt;p&gt;增加关税-》进口减少-》进口商品价格增加-》通货膨胀-》美联储加息-》国债收益率提高 -》政府成本提高财政赤字恶化&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-mermaid" data-lang="mermaid"&gt;graph TD
+A[特朗普政策] --&amp;gt; B[减税TCJA]
+A --&amp;gt; C[对华关税]
+A --&amp;gt; D[财政扩张]
+B --&amp;gt; E[企业利润↑]
+E --&amp;gt; F[股市↑]
+F --&amp;gt; G[消费信心↑]
+C --&amp;gt; H[进口成本↑]
+H --&amp;gt; I[消费品通胀↑]
+I --&amp;gt; J[美联储加息]
+J --&amp;gt; K[国债利息成本↑]
+D --&amp;gt; L[财政赤字↑]
+L --&amp;gt; M[国债发行量↑]
+M --&amp;gt; K
+K --&amp;gt; N[偿债压力↑]
+J --&amp;gt; O[美元走强]
+O --&amp;gt; P[出口竞争力↓]
+C --&amp;gt; Q[贸易伙伴反制]
+Q --&amp;gt; R[农业出口↓]
+A --&amp;gt; S[MAGA目标]
+S --&amp;gt; T[制造业回流]
+T --&amp;gt; U[企业投资自动化]
+I --&amp;gt; V[政策矛盾]
+J --&amp;gt; V
+L --&amp;gt; V
+W[新冠疫情] --&amp;gt; X[美联储降息至0]
+W --&amp;gt; Y[财政刺激↑]
+Y --&amp;gt; M
+X --&amp;gt; F
+%% 样式定义
+classDef green fill:#d5f5e3,stroke:#28b463;
+classDef red fill:#fadbd8,stroke:#e74c3c;
+classDef orange fill:#fdebd0,stroke:#f39c12;
+classDef blue fill:#d6eaf8,stroke:#3498db;
+class B,E,F,G green
+class C,H,I,J,K,L,M,N,Q,R red
+class V,T,W orange
+class A,S,D,P,O,X,Y blue
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>python中一些问题</title><link>https://chuanlii.github.io/posts/python%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link><pubDate>Sun, 23 Mar 2025 19:34:29 +0000</pubDate><guid>https://chuanlii.github.io/posts/python%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid><description>&lt;h1 id="python模块导入问题"&gt;Python模块导入问题&lt;/h1&gt;
+&lt;h2 id="目录结构"&gt;目录结构&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── proj
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── p1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ ├── __init__.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ ├── m1a.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ └── m1b.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── p2
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ ├── __init__.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ └── m2c.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── md.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ └── main.py
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="原理"&gt;原理&lt;/h2&gt;
+&lt;p&gt;当前执行模块作为主模块，会把主模块所在当前路径加入&lt;code&gt;sys.path&lt;/code&gt;，会在&lt;code&gt;sys.path&lt;/code&gt;中找所在的包。
+&lt;code&gt;main.py&lt;/code&gt;作为主模块执行时，是看不到上一层&lt;code&gt;proj&lt;/code&gt;的，只能看到&lt;code&gt;p1&lt;/code&gt;，&lt;code&gt;p2&lt;/code&gt;，&lt;code&gt;md&lt;/code&gt;
+&lt;code&gt;m1b.py&lt;/code&gt;作为主模块是看不到&lt;code&gt;p1&lt;/code&gt;的
+每个module的&lt;code&gt;__name__&lt;/code&gt;都是引用的路径，比如&lt;code&gt;m1a.py&lt;/code&gt;的&lt;code&gt;__name__&lt;/code&gt;是&lt;code&gt;p1.m1a&lt;/code&gt;
+当&lt;code&gt;m1a.py&lt;/code&gt;作为主模块执行时，&lt;code&gt;m1a.py&lt;/code&gt;的&lt;code&gt;__name__&lt;/code&gt;就是&lt;code&gt;__main__&lt;/code&gt;了&lt;/p&gt;
+&lt;h2 id="问题"&gt;问题&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── proj
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── p1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ ├── __init__.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ ├── m1a.py # from p1.m1b import fb; def fa() 等价于 from .m1b import fb; def fa()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ └── m1b.py # fb()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ └── main.py # from p1.m1a import fa; fa()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行&lt;code&gt;main.py&lt;/code&gt;，正常，因为当前路径为&lt;code&gt;proj/&lt;/code&gt;，&lt;code&gt;m1a&lt;/code&gt;中的&lt;code&gt;.m1b&lt;/code&gt;等于&lt;code&gt;p1.m1b&lt;/code&gt;，&lt;code&gt;main.py&lt;/code&gt;是可见的
+执行&lt;code&gt;m1a.py&lt;/code&gt;，就会报错&lt;code&gt;attempted relative import with no known parent package&lt;/code&gt;，因为：
+当前路径是&lt;code&gt;proj/p1/&lt;/code&gt;，只能看到&lt;code&gt;p1&lt;/code&gt;下面的内容，但是&lt;code&gt;m1a&lt;/code&gt;中的&lt;code&gt;.m1b&lt;/code&gt;等于&lt;code&gt;p1.m1b&lt;/code&gt;，看不到&lt;code&gt;p1&lt;/code&gt;，所以找不到&lt;code&gt;p1.m1b&lt;/code&gt;&lt;/p&gt;</description></item><item><title>mcp学习</title><link>https://chuanlii.github.io/posts/mcp%E5%AD%A6%E4%B9%A0/</link><pubDate>Fri, 21 Mar 2025 22:51:46 +0000</pubDate><guid>https://chuanlii.github.io/posts/mcp%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="cline-安装-nodejs-启动的-mcp-server-连接失败"&gt;Cline 安装 Node.js 启动的 MCP Server 连接失败&lt;/h1&gt;
+&lt;h2 id="问题描述"&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;在 Windows 环境下，使用 npx 启动 MCP Server 时出现以下错误：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;spawn npx ENOENT spawn npx ENOENT
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="解决方案"&gt;解决方案&lt;/h2&gt;
+&lt;p&gt;将启动方式从 npx 改为 node 启动。&lt;/p&gt;
+&lt;h3 id="具体步骤"&gt;具体步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;安装依赖：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;npm install -g @modelcontextprotocol/server-filesystem
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start="2"&gt;
+&lt;li&gt;修改配置文件：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;filesystem&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;node&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;C:/Users/xxx/AppData/Roaming/npm/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;e:/study/my_pages&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;disabled&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;autoApprove&amp;#34;&lt;/span&gt;: [],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;timeout&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;30&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="修改前配置"&gt;修改前配置&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;filesystem&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;npx&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;-y&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;@modelcontextprotocol/server-filesystem&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;e:/study/my_pages&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;disabled&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;autoApprove&amp;#34;&lt;/span&gt;: [],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;timeout&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;30&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>美元</title><link>https://chuanlii.github.io/posts/%E7%BE%8E%E5%85%83/</link><pubDate>Wed, 19 Mar 2025 21:45:35 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E7%BE%8E%E5%85%83/</guid><description>&lt;h1 id="货币供应量"&gt;货币供应量&lt;/h1&gt;
+&lt;p&gt;根据流通性来划分&lt;/p&gt;
+&lt;p&gt;M0 ​= 流通中现金&lt;/p&gt;
+&lt;p&gt;M1 = M0+活期存款&lt;/p&gt;
+&lt;p&gt;M2 = M1+定期存款+储蓄存款+其他存款​&lt;/p&gt;
+&lt;h1 id="货币怎么增发的"&gt;货币怎么增发的&lt;/h1&gt;
+&lt;p&gt;货币不是之间印出来就完了，要通过一些工具流通到市场上。&lt;/p&gt;
+&lt;h3 id="公开市场操作"&gt;公开市场操作：&lt;/h3&gt;
+&lt;p&gt;中央银行在公开市场上购买债券。
+本来市场100万货币，政府可以发行1万的债券，相当于市场上其他人借钱给政府1万，此时政府使用了这1万，货币总量还是1万。 现在由中央银行买了这1万的债券，现在市场上货币量是101万了，此时就相当于间接发行了1万的货币。&lt;/p&gt;
+&lt;h3 id="存款准备金率调整"&gt;存款准备金率调整：&lt;/h3&gt;
+&lt;p&gt;通过降低准备金率，银行就能贷出更多的钱，由于货币乘数效应，降低一点就释放出非常多的货币流通量。&lt;/p&gt;
+&lt;h3 id="调整再贴现率"&gt;调整再贴现率&lt;/h3&gt;
+&lt;h5 id="汇票"&gt;汇票&lt;/h5&gt;
+&lt;p&gt;A给B一张汇票，B可以拿这个汇票找付款人比如银行，银行来付款。
+是一种信用凭证/支付方式。有的汇票有到期日，在到期日才会付款。&lt;/p&gt;
+&lt;h5 id="贴现"&gt;贴现&lt;/h5&gt;
+&lt;p&gt;企业/个人将票据卖给 商业银行，提前获得流动资金。
+企业想要现金，所以可以将面值100万元、3个月到期的汇票以98万元卖给银行，来获得现金。贴现利息就是2万了。&lt;/p&gt;
+&lt;h5 id="再贴现"&gt;再贴现&lt;/h5&gt;
+&lt;p&gt;银行将未到期的票据，卖给中央银行，获得流动资金。&lt;/p&gt;
+&lt;h5 id="再贴现率"&gt;再贴现率&lt;/h5&gt;
+&lt;p&gt;中央银行向商业银行收取的利息率，就是再贴现率。
+降低利率，就会向市场释放流动性。&lt;/p&gt;
+&lt;h1 id="货币不可以随便发行"&gt;货币不可以随便发行&lt;/h1&gt;
+&lt;p&gt;货币增发后，流通的货币数量，相对商品数量增加（商品增幅没有货币增幅多），根据供需关系，货币就要贬值，商品价格上升。&lt;/p&gt;
+&lt;h3 id="通胀的传递"&gt;通胀的传递&lt;/h3&gt;
+&lt;p&gt;这个贬值是逐渐反映到市场上的，先是商品A涨价，然后B涨价，然后C涨价。多出的货币先去购买A，A就最先受到影响，A的需大于供给，所以最先涨价。然后A的商家赚到更多的钱，然后更多的去买B，B跟着涨价，最后传导到每一个地方。&lt;/p&gt;
+&lt;h3 id="多发行的货币是铸币税"&gt;多发行的货币是铸币税&lt;/h3&gt;
+&lt;p&gt;因为制造货币的成本很低，而商品的生产成本很高，所以货币发行者相当于免费得到了商品，可以看作商品生产者向发行者叫了一笔隐性的税。
+政府超发货币，相当于向市场上其他人征收了铸币税。会引发市场上的通货膨胀，市场受到影响。
+美国超发货币，相当于向国内市场+国外市场增收了铸币税，引发这两个市场的通货膨胀。对国外来说，相当于向国外其他国家征收了铸币税，白嫖了其他国家的资产。&lt;/p&gt;
+&lt;h1 id="美元潮汐收割"&gt;美元潮汐/收割&lt;/h1&gt;
+&lt;p&gt;每次都是在低价买入，高价卖出，收割其他国家的财富。&lt;/p&gt;
+&lt;h3 id="美元流出美国-降息"&gt;美元流出美国-降息&lt;/h3&gt;
+&lt;p&gt;美联储降息→资本流入投资回报率高的新兴市场 → 资本买入大量资产（较低成本）→新兴市场资产升值（投资增加，股市房地产泡沫）
+美国国内：流动性增加→通货膨胀→股市上涨&lt;/p&gt;
+&lt;h3 id="美元流入美国-加息"&gt;美元流入美国-加息&lt;/h3&gt;
+&lt;p&gt;美联储加息 → 资本回流到收益率高的美国国内 → 卖出新兴市场的资产（卖出价格高于买入价格，获取收益）→资产价格下降→美元减少，货币贬值
+美国国内：流动性减少→降低通货膨胀→股市下跌
+债务压力增加，支付债务利息增加&lt;/p&gt;
+&lt;h3 id="美元再次流出美国-降息"&gt;美元再次流出美国-降息&lt;/h3&gt;
+&lt;p&gt;美联储降息→ 资本流入新兴市场→ 又可以在低价买入大量资产&lt;/p&gt;
+&lt;h3 id="如何应对"&gt;如何应对&lt;/h3&gt;
+&lt;p&gt;金融监管，只能转移一部分资金&lt;/p&gt;</description></item><item><title>读书《看懂金融的第一本书》</title><link>https://chuanlii.github.io/posts/%E7%9C%8B%E6%87%82%E9%87%91%E8%9E%8D%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E4%B9%A6/</link><pubDate>Tue, 18 Mar 2025 22:54:21 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E7%9C%8B%E6%87%82%E9%87%91%E8%9E%8D%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E4%B9%A6/</guid><description>&lt;h1 id="金融产品"&gt;金融产品&lt;/h1&gt;
+&lt;h2 id="打新新股申购为什么有新股溢价"&gt;打新（新股申购）为什么有新股溢价？&lt;/h2&gt;
+&lt;p&gt;市场炒作和投机，发行价一般比市场价格低。&lt;/p&gt;
+&lt;h2 id="为什么a股称为政策市"&gt;为什么A股称为政策市？&lt;/h2&gt;
+&lt;h2 id="为什么分红少"&gt;为什么分红少？&lt;/h2&gt;
+&lt;p&gt;更倾向于再投资，a股散户更多，更倾向于短期股价波动，而不是长期股息收益。
+缺乏强制分红制度，只是鼓励。&lt;/p&gt;
+&lt;h2 id="股息率和市盈率的关系"&gt;股息率和市盈率的关系？&lt;/h2&gt;
+&lt;p&gt;股息率= 股息/股价&lt;/p&gt;
+&lt;p&gt;市盈率= 股价/每股收益&lt;/p&gt;
+&lt;p&gt;每股收益中的一部分，会被拿来作为分红&lt;/p&gt;
+&lt;h2 id="一级市场和二级市场的区别"&gt;一级市场和二级市场的区别？&lt;/h2&gt;
+&lt;p&gt;一级市场是发行者于购买者之间的交易市场。 交易的是新发型的证券
+二级市场是购买者之间的交易市场。交易的是已发行的证券。&lt;/p&gt;
+&lt;h2 id="债券"&gt;债券？&lt;/h2&gt;
+&lt;p&gt;盈利的2种方式：
+利息
+买卖债券赚取差价&lt;/p&gt;
+&lt;h2 id="国债"&gt;国债&lt;/h2&gt;
+&lt;p&gt;国债是几乎无风险的金融产品，其收益率是一切金融产品的定价标杆。&lt;/p&gt;
+&lt;h2 id="外汇"&gt;外汇&lt;/h2&gt;
+&lt;p&gt;外汇纯粹是投机，因为没有利息。&lt;/p&gt;
+&lt;h2 id="铸币税"&gt;铸币税&lt;/h2&gt;
+&lt;p&gt;发行货币的国家获得的收入：币面价值-印钞成本&lt;/p&gt;
+&lt;h2 id="美国为什么打伊拉克"&gt;美国为什么打伊拉克&lt;/h2&gt;
+&lt;p&gt;经济上的解释：美元失去于黄金的绑定后，建立了美元石油体系，海湾国家的石油只能以美元来结算。
+2002年，欧元成为欧元区的法定货币。伊拉克采用欧元来结算石油。美国需要采取措施捍卫美元的地位。&lt;/p&gt;
+&lt;h2 id="期权期货"&gt;期权期货&lt;/h2&gt;
+&lt;p&gt;有买入期权和卖出期权。
+期权持有人可以按约使用权利，也可以任其作废，还可以在有效期内将权利转售给其他人&lt;/p&gt;
+&lt;p&gt;期权：有权决定是否履行合约
+期货：合约到期，必须履行。&lt;/p&gt;
+&lt;p&gt;期货市场是个零和游戏。&lt;/p&gt;
+&lt;p&gt;期货对于卖出者相当于一个保险，给卖出者一个固定的价格；对买入者就相当于投机。&lt;/p&gt;
+&lt;h1 id="金融危机"&gt;金融危机&lt;/h1&gt;</description></item><item><title>投资中的概念名词</title><link>https://chuanlii.github.io/posts/%E6%8A%95%E8%B5%84%E4%B8%AD%E7%9A%84%E6%A6%82%E5%BF%B5%E5%90%8D%E8%AF%8D/</link><pubDate>Sun, 16 Mar 2025 13:01:32 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E6%8A%95%E8%B5%84%E4%B8%AD%E7%9A%84%E6%A6%82%E5%BF%B5%E5%90%8D%E8%AF%8D/</guid><description>&lt;h3 id="非对称风险"&gt;非对称风险&lt;/h3&gt;
+&lt;p&gt;潜在损失和潜在收益之间的不平衡。&lt;/p&gt;
+&lt;p&gt;高收益通常伴随高风险，但高风险未必带来高收益；
+杠杆能放大收益，但也会加剧损失，需谨慎使用；&lt;/p&gt;</description></item><item><title>基金投资2503</title><link>https://chuanlii.github.io/posts/%E5%9F%BA%E9%87%91%E6%8A%95%E8%B5%842503/</link><pubDate>Sun, 16 Mar 2025 12:19:10 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E5%9F%BA%E9%87%91%E6%8A%95%E8%B5%842503/</guid><description>&lt;h2 id="1-趋势判断和短期交易"&gt;1. 趋势判断和短期交易&lt;/h2&gt;
+&lt;p&gt;在上涨趋势中可以短期交易，过2天就买入卖出，在其他趋势中，短期交易很容易亏钱。&lt;/p&gt;
+&lt;h2 id="2-仓位管理"&gt;2. 仓位管理&lt;/h2&gt;
+&lt;p&gt;要有仓位的概念。比如，只有在自己认为非常低位的情况下，才可以满仓。不然，等出现更好的低位时，没有资金投入了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;仓位建议&lt;/strong&gt;：假设有20万资金，平时最多只放进去10万。下跌时，就买入一部分，等跌到上证3000以下，可以慢慢满仓（毕竟2800也不是没有发生过，但这种机会几年才能遇到一次）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预期高点&lt;/strong&gt;：比如4000点。到这个位置后，就全部卖出。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="3-对称交易策略与交易一致性"&gt;3. 对称交易策略与交易一致性&lt;/h2&gt;
+&lt;p&gt;“对称交易策略”或“交易一致性”强调，投资者进入市场的原因和条件，也应该是他们退出市场的原因和条件。这种方法强调一致性和纪律性，确保交易决策不受情绪或外部噪音的影响。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;长期持有&lt;/strong&gt;：未来看好国家发展和股市，就要一直持有，不要轻易听信一些人云亦云的话，网上说什么的都有。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="4-认知与收益"&gt;4. 认知与收益&lt;/h2&gt;
+&lt;p&gt;只能赚到自己认知以内的钱。即概率论中的“大数定律”，当交易次数足够多时，人的胜率就会收敛于一个自己认知决定的概率。&lt;/p&gt;
+&lt;h2 id="5-逆向投资策略"&gt;5. 逆向投资策略&lt;/h2&gt;
+&lt;p&gt;“别人贪婪我恐惧，别人恐惧我贪婪”是反人性的。大家都在赚钱的时候，就是高点，这时候要退出；大家都亏钱的时候，就是低点，这时候要买入。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;常见误区&lt;/strong&gt;：为什么大多数人买股票都是亏的？一个原因是：大多数人入场的时候，都是股市涨到了高点的时候。这时候的股票已经很贵了，入场很难赚到钱，之后就是下跌行情。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;正确做法&lt;/strong&gt;：应该在股票便宜的时候入场，即：当听到周围炒股的朋友说自己亏了很多钱时，这是最佳入场时机。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="6-风险与收益"&gt;6. 风险与收益&lt;/h2&gt;
+&lt;p&gt;收益高的都是高风险的，不可能既有高收益，又有低风险&lt;/p&gt;
+&lt;h2 id="7-见好就收"&gt;7. 见好就收&lt;/h2&gt;
+&lt;p&gt;3月初，上涨到最高点的时候，总觉得第二天还会涨，不仅没想着卖掉，还想着加仓，结果之后一周一直在跌，结果收益跌没了，跌的比赚的多。
+在大跌到低点附近的时候，没有及时加仓，因为担心明天还会跌，不敢加仓，导致错过了低位买入的时机。&lt;/p&gt;
+&lt;p&gt;如果见好就收，之前的利润可以到手，而且到低点的时候，还可以低位买入。&lt;/p&gt;
+&lt;p&gt;如何见好就收？
+将要投资的资金分为3份，1份作为长期持有；1份用于短期交易，1份用于抄底或底牌；
+在快到达近2周的高点的时候，就卖出短期交易的1份；
+如果认为接下来是牛市，就一直持有长期持有的1份；
+当有重大利好，或其他机会，再使用用于抄底的1份。&lt;/p&gt;</description></item><item><title>arch升级问题</title><link>https://chuanlii.github.io/posts/arch%E5%8D%87%E7%BA%A7%E9%97%AE%E9%A2%98/</link><pubDate>Sat, 15 Mar 2025 22:51:16 +0000</pubDate><guid>https://chuanlii.github.io/posts/arch%E5%8D%87%E7%BA%A7%E9%97%AE%E9%A2%98/</guid><description>&lt;p&gt;长期没有使用的arch系统的电脑，升级报错。&lt;/p&gt;
+&lt;p&gt;pacman -Syyu 更新时，提示glibc版本过低，需要2.38版本，所有的都无法升级&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;pacman: /usr/lib/libc.so.6: version &lt;span style="color:#e6db74"&gt;`&lt;/span&gt;GLIBC_2.38&lt;span style="color:#e6db74"&gt;&amp;#39; not found (required by pacman)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;pacman: /usr/lib/libc.so.6: version `GLIBC_2.38&amp;#39;&lt;/span&gt; not found &lt;span style="color:#f92672"&gt;(&lt;/span&gt;required by /usr/lib/libalpm.so.15&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;失败的尝试&lt;/strong&gt;：到镜像仓库，手动下载后，&lt;code&gt;pacman -U&lt;/code&gt; 安装，仍然提示glibc问题&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方式&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;打开 &lt;a href="https://aur.archlinux.org/packages/pacman-static"&gt;https://aur.archlinux.org/packages/pacman-static&lt;/a&gt; 找到置顶评论，下载一个二进制包
+&lt;a href="https://pkgbuild.com/~morganamilo/pacman-static/x86_64/bin/"&gt;https://pkgbuild.com/~morganamilo/pacman-static/x86_64/bin/&lt;/a&gt;
+下载好这个包之后，直接 &lt;code&gt;chmod +x pacman-static&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;最后执行下面的命令安装缺失的 glibc&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./pacman-static -S glibc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但是提示秘钥检查错误 &lt;code&gt;is unknown trust&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方式&lt;/strong&gt;：
+直接临时禁用，到&lt;code&gt;/etc/pacman.conf&lt;/code&gt; 设置 &lt;code&gt;SigLevel = Never&lt;/code&gt;，然后重试即可&lt;/p&gt;
+&lt;p&gt;之后去掉禁用，重新设置秘钥&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo pacman-key --init
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo pacman-key --populate archlinux
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo pacman-key --refresh-keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之后正常安装即可&lt;/p&gt;</description></item><item><title>一些工具</title><link>https://chuanlii.github.io/posts/%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7/</link><pubDate>Thu, 21 Jul 2022 15:39:32 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7/</guid><description>&lt;p&gt;win上的免费剪切板工具： Ditto&lt;/p&gt;</description></item><item><title>WebAssembly</title><link>https://chuanlii.github.io/posts/webassembly/</link><pubDate>Sat, 28 May 2022 16:20:51 +0000</pubDate><guid>https://chuanlii.github.io/posts/webassembly/</guid><description>&lt;p&gt;一个WebAssembly例子&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;
+rustc --version 检查是否安装
+rustup 安装和版本管理工具
+Cargo：Rust 的构建工具和包管理器
+rustup update 升级rust
+cargo new hello 创建项目
+cargo build 可以构建项目
+cargo run 可以运行项目
+cargo test 可以测试项目
+cargo doc 可以为项目构建文档
+cargo publish 可以将库发布到 crates.io
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更新cargo 源
+在.cargo/下，创建config文件，配置如下&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;[source.crates-io]
+registry = &amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34;
+replace-with = &amp;#39;ustc&amp;#39;
+[source.ustc]
+registry = &amp;#34;git://mirrors.ustc.edu.cn/crates.io-index&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;安装wasm-pack
+sudo curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+cargo install cargo-generate
+cargo generate --git https://github.com/rustwasm/wasm-pack-template
+wasm-pack build
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>使用wsl</title><link>https://chuanlii.github.io/posts/%E4%BD%BF%E7%94%A8wsl/</link><pubDate>Sat, 28 May 2022 15:20:57 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E4%BD%BF%E7%94%A8wsl/</guid><description>&lt;p&gt;windows应用商店下载太慢，更新DNS为&lt;code&gt;4.2.2.1&lt;/code&gt;,然后刷新dns&lt;code&gt;ipconfig /flushdns&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;准备阶段&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# /etc/apt/source.list 更新源&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 安装常用软件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install net-tools
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install curl
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# nodejs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install nodejs
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install npm
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;npm config set registry http://npmmirror.com &lt;span style="color:#75715e"&gt;# 换个镜像源&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# go&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar -C /usr/local -xzf goxx-amd64.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 在/etc/profile中加环境变量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;export PATH&lt;span style="color:#f92672"&gt;=&lt;/span&gt;$PATH:/usr/local/go/bin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;source /etc/profile
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# ruby&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install rbenv
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rbenv install --list
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rbenv install 2.7.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ruby&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>flask结合nacos和GraphQL构建微服务</title><link>https://chuanlii.github.io/posts/flask%E7%BB%93%E5%90%88nacos%E5%92%8Cgraphql%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/</link><pubDate>Thu, 17 Dec 2020 23:22:38 +0000</pubDate><guid>https://chuanlii.github.io/posts/flask%E7%BB%93%E5%90%88nacos%E5%92%8Cgraphql%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/</guid><description>&lt;p&gt;Flask结合nacos和graphql构建微服务&lt;/p&gt;
+&lt;h3 id="准备"&gt;准备&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;pip install nacos-sdk-python
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;pip install graphene
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="flask结合graphql"&gt;Flask结合graphql&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; graphene &lt;span style="color:#f92672"&gt;import&lt;/span&gt; ObjectType, Field, String,Int
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 自定义的类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ItemList&lt;/span&gt;(ObjectType):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Meta&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; description &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;这是返回类型的注释，要放在Meta类中，graphql会显示&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; data &lt;span style="color:#f92672"&gt;=&lt;/span&gt; List(Item) &lt;span style="color:#75715e"&gt;# list列表，Item是自定义类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; total &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Int() &lt;span style="color:#75715e"&gt;# 标量类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; page &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Field(PageInfo) &lt;span style="color:#75715e"&gt;# PageInfo是自定义类型，自定义类型需要有Field()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Query&lt;/span&gt;(ObjectType):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; hello &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Field(Result, user_name&lt;span style="color:#f92672"&gt;=&lt;/span&gt;String()) &lt;span style="color:#75715e"&gt;# Result是返回结果，name是参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; itemList &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Field(ItemList,a &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Int(),b &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Int()) &lt;span style="color:#75715e"&gt;# ItemList是返回类型，a和b是传入的参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;resolve_hello&lt;/span&gt;(root, info,user_name):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; Result(&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;ok&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;resolve_itemList&lt;/span&gt;(root,info,a,b):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; ItemList()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;schema &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Schema(query&lt;span style="color:#f92672"&gt;=&lt;/span&gt;Query)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;create_app&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; app &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Flask(__name__)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; app&lt;span style="color:#f92672"&gt;.&lt;/span&gt;add_url_rule(&lt;span style="color:#e6db74"&gt;&amp;#39;/graphql&amp;#39;&lt;/span&gt;, view_func&lt;span style="color:#f92672"&gt;=&lt;/span&gt;GraphQLView&lt;span style="color:#f92672"&gt;.&lt;/span&gt;as_view(&lt;span style="color:#e6db74"&gt;&amp;#39;graphql&amp;#39;&lt;/span&gt;, schema&lt;span style="color:#f92672"&gt;=&lt;/span&gt;schema, graphiql&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;True&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@app.route&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;/hello&amp;#39;&lt;/span&gt;, methods&lt;span style="color:#f92672"&gt;=&lt;/span&gt;[&lt;span style="color:#e6db74"&gt;&amp;#39;get&amp;#39;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;hello&lt;/span&gt;(): &lt;span style="color:#75715e"&gt;# 普通请求&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; app
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; __name__ &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; app &lt;span style="color:#f92672"&gt;=&lt;/span&gt; create_app()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ip &lt;span style="color:#f92672"&gt;=&lt;/span&gt; getIp()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(ip)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; app&lt;span style="color:#f92672"&gt;.&lt;/span&gt;run(ip,&lt;span style="color:#ae81ff"&gt;9099&lt;/span&gt;,debug&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# 用如下方式，如果不想出现WARNING: This is a development server. Do not use it in a production deployment.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# server = pywsgi.WSGIServer((ip, 9099), app)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# server.serve_forever()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 在ip:9099/graphql下，即可访问&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 在graphql中，请求如下&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# hello(user_name:&amp;#34;tom&amp;#34;){ result }&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="注册服务维持心跳"&gt;注册服务&amp;amp;维持心跳&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; time
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; nacos
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; socket
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;getIp&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; hostname &lt;span style="color:#f92672"&gt;=&lt;/span&gt; socket&lt;span style="color:#f92672"&gt;.&lt;/span&gt;gethostname()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ip &lt;span style="color:#f92672"&gt;=&lt;/span&gt; socket&lt;span style="color:#f92672"&gt;.&lt;/span&gt;gethostbyname(hostname)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; ip
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SERVER_ADDRESSES &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;1.1.1.1:8848&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;NAMESPACE &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;public&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;client &lt;span style="color:#f92672"&gt;=&lt;/span&gt; nacos&lt;span style="color:#f92672"&gt;.&lt;/span&gt;NacosClient(SERVER_ADDRESSES, namespace&lt;span style="color:#f92672"&gt;=&lt;/span&gt;NAMESPACE, username&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;nacos&amp;#34;&lt;/span&gt;, password&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;nacos&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 注册实例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;client&lt;span style="color:#f92672"&gt;.&lt;/span&gt;add_naming_instance(&lt;span style="color:#e6db74"&gt;&amp;#34;service-hello&amp;#34;&lt;/span&gt;, ip&lt;span style="color:#f92672"&gt;=&lt;/span&gt;utils&lt;span style="color:#f92672"&gt;.&lt;/span&gt;getIp(), port&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;9099&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 需要不断发送心跳&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;True&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; time&lt;span style="color:#f92672"&gt;.&lt;/span&gt;sleep(&lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; client&lt;span style="color:#f92672"&gt;.&lt;/span&gt;send_heartbeat(&lt;span style="color:#e6db74"&gt;&amp;#34;service-hello&amp;#34;&lt;/span&gt;,ip&lt;span style="color:#f92672"&gt;=&lt;/span&gt;getIp(),port&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;9099&amp;#34;&lt;/span&gt;) &lt;span style="color:#75715e"&gt;# 持续发心跳&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;spring调用python的微服务&lt;/p&gt;</description></item><item><title>Vim 使用说明</title><link>https://chuanlii.github.io/posts/vim-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link><pubDate>Tue, 08 Dec 2020 22:19:45 +0000</pubDate><guid>https://chuanlii.github.io/posts/vim-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid><description>&lt;p&gt;vim两种模式，insert和normal模式，normal就是命令模式，insert就是编辑模式。&lt;/p&gt;
+&lt;p&gt;参考https://coolshell.cn/articles/5426.html&lt;/p&gt;
+&lt;p&gt;非常全的：https://vim.rtorr.com/lang/zh_cn&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 插入模式&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;i 光标前插入
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;a 光标后插入，append
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;o 在当前行后插入一个新行
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#移动&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;0 行前
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;^ 本行第一个非空白字符
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ 本行最后一个字符
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/pattern 搜索pattern，回车后，按n到下一个
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 粘贴拷贝&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dd 删除当前行，并存入剪切板
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;p 粘贴剪切板
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;yy 拷贝当前行，等于ddp
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 撤回&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;u undo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ctrl+r redo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 打开保存退出&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;:e &amp;lt;filename&amp;gt; 打开文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;:w 保存
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;:saveas &amp;lt;name&amp;gt; 另存为
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;:bn 切换到下一个文件 next
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;:bp 切换到上一个文件 pre
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 高级&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;. 重复上一次命令
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;N&amp;lt;command&amp;gt; 重复N次
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;3dd 删除3行
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;5p 粘贴5次
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 移动&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;:set nu 显示行
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gg 移动到第一行
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;G 移动到最后一行
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;:12 移动到第12行
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;w 下一个单词开头
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;e 下一个单词结尾，若在当前单词中间，就移动到当前单词结尾
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;b 当前单词开头
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;% 在括号上使用，移动到匹配的另一个括号
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;* 移动到和当前单词相同的下一个单词
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 移动到和当前单词相同的上一个单词&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;start position&amp;gt;&amp;lt;command&amp;gt;&amp;lt;end position&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;0y$ 从行开头复制到行结尾
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ye 从当前位置拷贝到本单词的最后一个字符
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;yb 从当前位置前一个次方拷贝到本单词的第一个字符
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;v 进入可视化
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;v 方向键选择，然后y，可以范围复制
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;v 方向键选择，然后d，可以范围删除
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>使用hexo创建github pages</title><link>https://chuanlii.github.io/posts/hexo%E5%88%9B%E5%BB%BAgitpages/</link><pubDate>Tue, 01 Dec 2020 22:19:45 +0000</pubDate><guid>https://chuanlii.github.io/posts/hexo%E5%88%9B%E5%BB%BAgitpages/</guid><description>&lt;p&gt;hexo：一个使用简单的博客框架，通过md文件生成静态页面。
+Travis CI：持续集成工具，检测到github上的提交后，自动执行脚本，更新静态页面
+hexo主题：&lt;a href="https://github.com/XPoet/hexo-theme-keep"&gt;ILS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;创建两个分支，main和gp-pages，main存放所有文件，gh-pages存放生成的页面，同时在settings里面将gh-pages设置为github Pages的默认分支。
+使用时，只需要git上传md文件，travis就会自动执行脚本，更新gh-pages分支内容。&lt;/p&gt;
+&lt;h3 id="使用"&gt;使用&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;npm install hexo-cli -g
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;npm init xx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd xx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 创建&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ hexo new &lt;span style="color:#e6db74"&gt;&amp;#34;My New Post&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 本地生成&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ hexo g
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 本地演示&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ hexo server
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 部署 https://hexo.io/zh-cn/docs/one-command-deployment&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 安装hexo-deployer-git后，&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ hexo clean
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ hexo d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="问题"&gt;问题&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;push代码后，打开blog页面，发现是一片空白。看gh-pages里面生成的代码，是空的。本地hexo generate是没有问题的。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;检查main分支的themes下的ils，是空的。且ils文件夹有一个白色箭头，代表一个子模块。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;重新git add themes/ils，出现错误。
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;fatal: in unpopulated submodule &lt;span style="color:#e6db74"&gt;&amp;#39;themes/ils&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git rm -rf themes/ils
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;删掉ils，再重新添加，解决。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

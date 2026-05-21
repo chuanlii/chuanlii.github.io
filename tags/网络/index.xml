@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>网络 on My Personal Site</title><link>https://chuanlii.github.io/tags/%E7%BD%91%E7%BB%9C/</link><description>Recent content in 网络 on My Personal Site</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 02 Apr 2025 23:07:19 +0000</lastBuildDate><atom:link href="https://chuanlii.github.io/tags/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml"/><item><title>抓包deepseek的api</title><link>https://chuanlii.github.io/posts/%E6%8A%93%E5%8C%85deepseek%E7%9A%84api/</link><pubDate>Wed, 02 Apr 2025 23:07:19 +0000</pubDate><guid>https://chuanlii.github.io/posts/%E6%8A%93%E5%8C%85deepseek%E7%9A%84api/</guid><description>&lt;h1 id="问题"&gt;问题：&lt;/h1&gt;
+&lt;p&gt;直接请求deepseek的api，回答的内容和通过cline返回的结果有很多区别，比如问今天几号，前者会回答以前的时间。&lt;/p&gt;
+&lt;p&gt;通过抓包来验证一些，promot有什么区别。&lt;/p&gt;
+&lt;h1 id="抓包https包"&gt;抓包https包&lt;/h1&gt;
+&lt;p&gt;1 装个 mitmproxy， 启动mitmweb.exe
+这个按中间人攻击的方式实现的，还需要装个ca证书&lt;/p&gt;
+&lt;p&gt;2 打开设置，将系统代理设置为mitmproxy的端口
+3 下载证书
+打开 &lt;a href="https://mitm.it"&gt;https://mitm.it&lt;/a&gt;, 下载windows的证书，安装（不用设置密码）
+4 在mitmweb的Flow list中，根据关键词过滤deepseek。&lt;/p&gt;
+&lt;h1 id="验证"&gt;验证&lt;/h1&gt;
+&lt;p&gt;直接请求api，模型是不知道时间的。问今天几号也不知道。&lt;/p&gt;
+&lt;p&gt;通过cline请求，cline会带上非常长的system的prompt，有好几万的token。user的promot中，还会带上环境详情（包括时间等）。
+下一次提问时，cline会把历史的ai和user的对话都带上传过去，每次都要几十k的数据。&lt;/p&gt;
+&lt;p&gt;MCP：通过抓包发行，启动mcp后，cline会在系统prompt中，加上mcp的详细描述，每个方法参数等，之后还带上了一个查询天气的mcp的使用示例。&lt;/p&gt;</description></item></channel></rss>

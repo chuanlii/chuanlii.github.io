@@ -1,0 +1,103 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Posts | My Personal Site</title><meta name=keywords content><meta name=description content="Posts - My Personal Site"><meta name=author content><link rel=canonical href=https://chuanlii.github.io/posts/><link crossorigin=anonymous href=/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as=style><link rel=icon href=https://chuanlii.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://chuanlii.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://chuanlii.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://chuanlii.github.io/apple-touch-icon.png><link rel=mask-icon href=https://chuanlii.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://chuanlii.github.io/posts/index.xml title=rss><link rel=alternate hreflang=en href=https://chuanlii.github.io/posts/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://chuanlii.github.io/posts/"><meta property="og:site_name" content="My Personal Site"><meta property="og:title" content="Posts"><meta property="og:description" content="A personal website built with Hugo and GitHub Pages."><meta property="og:locale" content="zh_cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Posts"><meta name=twitter:description content="A personal website built with Hugo and GitHub Pages."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://chuanlii.github.io/posts/"}]}</script></head><body class=list id=top><header class=header><nav class=header-nav><div class=logo><a href=https://chuanlii.github.io/ accesskey=h title="My Personal Site (Alt + H)">My Personal Site</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=https://chuanlii.github.io/ title=Home><span>Home</span></a></li><li><a href=https://chuanlii.github.io/posts/hello/ title=Hello><span>Hello</span></a></li><li><a href=https://chuanlii.github.io/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://chuanlii.github.io/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><header class=page-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1>Posts</h1></header><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Hello</h2></header><div class=entry-content><p>Hugo 常用命令与使用方式 这是一份放在 hello.md 里的 Hugo 快速使用说明，方便你后面直接边写边查。
+1. 初始化与新建内容 # 当前项目里使用 Hugo 可执行文件 D:\blog\tools\hugo\hugo.exe version # 新建一篇文章 D:\blog\tools\hugo\hugo.exe new content posts/my-first-post.md # 新建一个独立页面 D:\blog\tools\hugo\hugo.exe new content about.md 使用方式：
+new content 会按 Hugo 的 archetype 生成 Markdown 文件。 新文章默认位置通常放在 content/posts/。 如果文章头部 draft = true，默认不会出现在正式构建中。 2. 本地预览 # 启动本地开发服务器 D:\blog\tools\hugo\hugo.exe server # 连草稿一起预览 D:\blog\tools\hugo\hugo.exe server -D 使用方式：
+启动后访问 http://localhost:1313/。 修改 content/、layouts/、static/ 后，页面通常会自动刷新。 -D 等价于 --buildDrafts，适合写草稿时预览。 3. 正式构建 # 生成静态站点文件 D:\blog\tools\hugo\hugo.exe # 清理目标目录后再构建 D:\blog\tools\hugo\hugo.exe --cleanDestinationDir 使用方式：
+...</p></div><footer class=entry-footer><span title='2026-05-21 21:48:00 +0800 CST'>May 21, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer><a class=entry-link aria-label="post link to Hello" href=https://chuanlii.github.io/posts/hello/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>A股的特点</h2></header><div class=entry-content><p>中国股市和美国股市有什么区别? 要了解中国A股，可以通过对比来找出来特点
+A股 美股 投资者:散户占主导 机构占主导 资本流动: 国际资本流入限制 全球资本自由流动 监管:透明度低，待继续完善 更高 交易:T+1 T+0 波动:有涨跌停限制 个股没有限制
+A股有什么特点或规律呢? 高波动性，牛短熊长 散户占比高，容易情绪化交易，放大波动 政策会引发快速上涨下跌
+散户行为主导，投机性强 短期交易频繁，总是追热点，炒作题材 个人投资者缺乏长期投资理念，都想赚快钱 市场情绪化，导致股价短期内暴涨暴跌 市场深度不够，中小市值股票多，容易被资金操纵
+政策影响大 政府角色：中国政府通过货币政策、财政政策和资本市场改革引导市场。 市场不成熟：A股依赖政策信号弥补市场机制不足。 资本管制：国际资金流动受限，国内政策影响力更大。
+板块轮动频繁 政策引导，市场炒作
+一些反直觉的地方 主要是2点，散户主导，政策市。 散户容易频发交易、从众、受到情绪化影响； 市场受到政策影响大。
+反直觉方面 与成熟市场对比/直觉预期 A股市场表现 背后原因 “政策市”显著 公司基本面和宏观经济是主要驱动力。 政策导向短期内极大影响市场情绪和板块轮动，有时超越基本面。 中国经济体制中政府的强大调控能力；市场发展初期监管的引导作用。 散户主导下的情绪化波动 机构投资者主导，更偏向理性定价。 散户交易易受短期消息、传闻和情绪影响，市场波动性较大，股价有时脱离基本面。 投资知识普及度、投资理念成熟度、信息获取对称性等差异。 “炒小、新、差、题材” 价值投资强调绩优、估值合理的蓝筹股。 小盘股、新股、绩差股（博重组）、题材股即使缺乏基本面支撑也可能受追捧暴涨。 资金对短期高回报的追求；部分绩差股的“壳价值”预期；新股发行制度带来的稀缺性溢价。 高换手率 鼓励长期持有，降低交易成本。 整体换手率全球较高，反映投资者倾向于频繁买卖。 散户的交易习惯；对短期波动的捕捉意愿；部分投资者将股市视为“提款机”。 新股不败神话（阶段性） 新股有涨有跌，定价更为市场化。 过去新股上市后往往连续涨停，中签如中奖。 新股发行审批制下供给偏紧；发行定价受限；供需不平衡和炒作预期。 “喝酒吃药”行情持续性 行业轮动，各行业表现相对均衡。 消费（白酒）和医药板块能走出独立且持续较长的牛市，估值有时很高。 中国庞大人口和消费升级；医药行业刚需和成长性；龙头公司品牌护城河。 ST股“乌鸡变凤凰”预期 高风险，面临退市。 部分ST股因重组、借壳预期受投机资金追捧，股价大幅波动。 过去退市制度执行不够严格，壳资源有价值。 对数据/财报的“非理性”解读 市场对消息的反应相对符合逻辑。 利好出尽是利空，或对利空过度反应；业绩良好股价反跌也时有发生。 市场预期的提前消化；信息不对称；主力资金操作意图；投资者情绪复杂影响。 “大小盘风格”极端切换 风格转换相对平缓，与经济周期关联更紧密。 大小盘风格切换剧烈且持续时间长，并非完全由基本面解释。 不同类型资金风险偏好差异；市场在不同阶段对成长性与确定性的追求不同。</p></div><footer class=entry-footer><span title='2025-05-10 17:13:46 +0000 UTC'>May 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer><a class=entry-link aria-label="post link to A股的特点" href=https://chuanlii.github.io/posts/a%E8%82%A1%E7%9A%84%E7%89%B9%E7%82%B9/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>市场中的心理</h2></header><div class=entry-content><p>投机行为有哪些? 上涨的股票，更倾向于继续上涨?还是倾向于下跌?
+1追涨杀跌? 就是在赌会继续上涨，是一种投机行为 是一种情绪化的非理性投资行为。 因为受到市场情绪和群体心理，会放大市场波动，导致涨的时候过度的涨，跌的时候过度下跌，进而恶性循环，增加波动性。
+为什么追涨杀跌会亏钱? 比如价值100，可能会增长20%，但是因为是过度上涨了30%，后面可能会下跌回归到120，所以买入很可能买在高点。 下跌也是，下跌后就卖掉离场，导致错过反弹。
+波动大也未尝不是个优点 既然由于散户的追涨杀跌导致股价大幅波动，那就代表会出现股价会下跌过度的情况，那就可以利用这一点。 此时如果在过度下跌的时候抄底，就能获得更多的利润。
+不过难的一点在于，怎么判断什么时候算是下跌到底部了?什么时候是跌到半山腰了?
+2 打新投机 期望新股会上涨
+3 题材炒作 题材炒作往往能在短期内带来巨大的收益，但题材的热度往往难以持续，一旦市场热点转移，股价可能会大幅下跌，投资者如果不能及时获利了结，就容易遭受损失。
+4短线交易，频繁交易 市场情绪 对市场的态度： 乐观 中性 悲观
+群体会放大个人情绪，变成市场情绪。 导致波动更大，反应更快。
+下跌时，短时间内，出现超跌。跌过实际价值。 可能会导致熔断、崩盘。
+上涨时，短时间内，出现超涨。超过实际价值。 可能会产生泡沫、杠杆。
+群体心理　羊群效应：跟风操作，缺乏理性思考 过度自信：高估自己的能力 厌恶损失： 更加难以忍受损失 锚定效应，锚定于买入成本 将最初的信息作为后续判定的依据
+负面消息过度反应： 导致出现超跌
+应对情况 平衡： 评估市场风险，选择持有，或切到收益更高的地方
+亏损： 如果看好，但有更好的机会，即使亏损也要卖出，然后买入更有潜力的。 如果非常看好，那就不动，或加仓 如果不看好，就清仓
+盈利 如果看好，就等待不动 如果不看好，就卖掉，落地为安
+为什么会反人性 方面 (Aspect) 人性表现 (Human Tendency) 股市“反人性”要求 (Counter-intuitive Trading Requirement) 克服贪婪与恐惧 追求更多，易贪婪；面临不确定性和潜在损失时，易恐惧。 在他人贪婪时警惕风险，在他人恐惧时冷静分析机会。盈利很多就卖掉；低点就要抓住机会抄底。 对抗羊群效应 社会性动物，有强烈的从众心理，倾向于跟随大多数人以获得安全感。 独立思考，不盲从多数，甚至做出与大众相反的决策（逆向投资）。大家都在买黄金，就不要跟着买了。 接受不确定性与概率思维 渴望确定性，喜欢明确答案和可预测结果，对模糊和概率感到不适。 接受市场本质的不确定性，运用概率思维，理解亏损是交易的一部分，关注长期整体盈利概率。 克服损失厌恶 对损失的痛苦远大于同等收益的快乐；倾向于死扛亏损股，过早卖出盈利股。 及时止损，承认判断失误，让盈利头寸“自由奔跑”。勇敢“割肉”，坦然面对亏损。 延迟满足与长期视角 倾向于即时满足，希望快速看到结果，对短期利益更敏感。 需要耐心和长期坚持，抵制频繁操作、追涨杀跌的诱惑，坚持既定策略和长远目标。要长远看。 客观自省与承认错误 有自我辩护倾向，不愿承认错误，易将成功归因于己，失败归咎于外。 客观复盘交易，勇于承认并从错误中学习，不断完善交易系统和心态。承认自己的不足，才能进步。 对抗过度自信与确认偏误 易高估自身能力（过度自信）；倾向于寻找支持自己观点的信息，忽略相反信息（确认偏误）。 保持谦逊，敬畏市场，主动寻找不同观点进行批判性思考，避免主观偏见。 纪律性执行 情绪波动时，易偏离原有计划和规则，做出冲动性决策。 无论市场如何波动、情绪如何起伏，都严格执行既定的交易计划（入场、出场、止损、仓位管理等），需要极强自控力。不要一时冲动就去交易操作。 要做的哪些 逆势操作
+在市场普遍恐慌时买入，别人贪婪时卖出。比如，巴菲特在2008年金融危机时逆势投资，最终获得巨大回报，这正是“反人性”的典型体现。 独立思考
+不盲从市场情绪或热门观点，而是基于数据和基本面分析做出决策，避免被群体情绪裹挟。 情绪控制
+保持冷静，不因短期波动而动摇，专注于长期目标，而不是被当下的恐惧或贪婪支配。</p></div><footer class=entry-footer><span title='2025-05-10 15:13:46 +0000 UTC'>May 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer><a class=entry-link aria-label="post link to 市场中的心理" href=https://chuanlii.github.io/posts/%E5%B8%82%E5%9C%BA%E4%B8%AD%E7%9A%84%E5%BF%83%E7%90%86/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>投资记录2504</h2></header><div class=entry-content><p>概括一下，4月初关税战，然后立即清明节，然后节后4月7号8号因为关税问题暴跌，然后就陆续反弹。黄金也在到达3500美元每盎司后，大跌，跌回了3200多。
+失误 3月底一直在波动，属于垃圾时间，反而还有风险，应该空仓等待机会。但是没有离场，导致利润都亏完了。
+最大的不确定性就是特朗普。懂王当选后，要有一个预期:会准备下一轮的贸易战。 懂王在3月4日就发表过4月2日会征收对等关税，所以4月会存在风险。没有预料到这个，导致没有及时离场，导致损失惨重。
+4月7日,8日，应该趁低点进场，但是没有大量进场，导致没有抓住机会。(当时顾虑会继续下跌，实际在4月8日上证就反弹了，应该可以进入了)
+黄金上涨剧烈，每天都在涨，风险也在增加。但是当时觉得股票会反弹的更多，所以没有买入。后面网上很多人都在炒作黄金了，这时候就应该退出离场。没有离场，反而加仓，导致出现了亏损。
+最佳投资能收益多少? 假如在4月7,8号入场，持有到大概月末，各种不同投资收益如下:
+名称 数值 黄金 13 山东黄金 16，高点卖出就是32 紫金矿业 20 华友钴业 23 机器人etf 10 双环传动 18 科创50 8 科创etf 12 沪深300 4 立讯精密 8 银行etf 3 小米 37 比亚迪 13 恒生科技 7 游戏 11 军工 7 创新药 5 美的 9 常山北明 22 拓维信息 36 药明康德 17 最高的是拓维信息,紫金矿业(挖黄金的)，小米等。平均也有10的收益率。
+最保险的策略应该是买科创芯片etf等，这些因为有国产替代，反而利好。起码可以跑赢平均的收益率。而且跌了很多，当时应该加仓。
+黄金一直在涨，当时可以买入大量的山东黄金,紫金矿业等，比黄金涨的更多，在网上看到有人买黄金的消息时，就应该立刻退出。
+还有一个大幅下跌的是小米，事实也证明小米是值得投资的，反弹也大幅反弹了。
+期间港股有一个泡泡玛特，涨到特别多，但是不知道什么时候泡沫会破裂。不过破裂后，在低谷后，可以考虑买入。
+军工,银行,沪深300等，相对涨幅不大，投资的话赶不上平均收益。
+开始想象 开始空仓，到4.7,4.8，然后满仓进去(再下跌也没事，亏不了多少)。满仓进入科创etf中，起码有10个点的收益。 在4.14反弹1周后，回到了关税战开始前的水平了，此时差不多不会继续增长了。
+黄金还在一直上涨，这时买入山东黄金或黄金，还得增加5到10个点; 或者找一下，哪些还没用回到3月30号的位置的，也可以买入，之后就离场就行了。
+然后就等有没有重大利好消息，然后再进场。
+这样就有至少15个点收益了。
+最后 如果买了小米或山东黄金(黄金A股都涉及了)，再高点卖出，那就是30多个点了!
+另外加密货币，以后也许可以考虑。没准懂王有什么操作，导致trump币升值? 但是真买这个就相当于支持懂王了。</p></div><footer class=entry-footer><span title='2025-05-05 21:55:33 +0000 UTC'>May 5, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer><a class=entry-link aria-label="post link to 投资记录2504" href=https://chuanlii.github.io/posts/%E6%8A%95%E8%B5%84%E8%AE%B0%E5%BD%952504/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>美债</h2></header><div class=entry-content><p>什么是美债？ 期限：美债有短期1年内的，中期（1-10年），长期国债（10年+）。
+付息方式： 固定利率，浮动利率
+各种类型的美债占比多少？
+美债存在的风险 利率风险： 市场利率升高了，新的美债利率很高，而持有的旧的美债利率不变，就相对降低了， 旧的美债价格就会下降。
+通货膨胀： 通货膨胀相当于钱贬值，美债的收益就会下降了。
+美债债务压力 规模： 36万亿美元， 占gdp的124%
+利息： 1.13万亿美元，3.32利率
+赤字：
+到期债务：
+政府如何化债 1 进行债务重组 与债权人协商延长还款期限，降低利率，分期偿还 2 财政增收 加关税、税收优化、国企利润上缴 3 置换债券 发行低息长期债券，换取高息短期债券 4 资产变现 出售国有资产等
+美国可能还债方式 还债方式 核心手段 影响 可操作性 效果 增税 提高个人所得税、企业税、资本利得税等税率，扩大税基（如对富人阶层、跨国企业加税） 短期增加财政收入，但可能抑制消费与投资，影响企业竞争力；引发民众及企业反对，政治阻力大 需国会通过，两党分歧下难以达成共识（共和党传统反对增税，民主党支持对富人加税） 长期可持续性取决于税率调整幅度，若过度增税可能拖累经济增长，反而影响税基扩大 削减政府开支 缩减非必要支出，如国防预算、社会福利（医保、社保）、行政开支等 直接减少财政赤字，但可能引发社会不满（如削减福利影响低收入群体），国防削减面临军工集团压力 受政治博弈影响大，两党对 “非必要开支” 定义分歧严重，难以达成实质性削减 短期可缓解债务压力，但长期可能削弱公共服务与基建投资，损害经济潜力 推动经济增长 加大基建投资、鼓励创新（研发补贴）、降低企业税负以刺激投资与就业 经济增速提升可扩大税基，增加税收收入；提升长期偿债能力，减少债务 / GDP 比值 需长期投入，政策效果滞后；可能依赖财政赤字融资，短期内加剧债务规模 长期最健康的方式，但需解决结构性问题（如劳动参与率、生产率增长） 债务重组与展期 与债权人协商延长债务期限、降低利率，或发行长期债券置换短期债务 缓解短期偿债压力，降低利息支出；但可能影响美国信用评级，推高未来融资成本 需债权人（如外国央行、机构投资者）配合，美元霸权下部分债权人可能被迫接受 短期有效，长期需以信用为代价，可能导致未来融资难度增加 量化宽松（印钞） 美联储通过购买国债向市场注入流动性，压低利率，间接为政府融资 短期降低融资成本，稀释债务实际价值；但引发通胀风险，损害美元信用，加剧国际去美元化 美联储保持独立性，需权衡通胀与就业目标，2023 年后加息周期中实施难度上升 短期缓解流动性危机，长期可能导致恶性通胀或货币体系动荡 通胀稀释债务 通过政策放任或推动通胀，使债务实际价值缩水（因偿还时货币购买力下降） 债权人（尤其是外国持有者）财富转移至美国政府；推高国内生活成本，引发民众不满 无需立法程序，依赖货币政策宽松，但美联储需承担通胀失控风险 隐蔽性强，短期有效，但长期损害美元信誉，可能导致资本外流 资产出售 抛售政府持有的资产（如国有土地、基础设施、金融资产等） 快速回笼资金，减少债务规模；但可能低价贱卖优质资产，损害长期公共利益 受资产类型与市场环境限制，大规模出售需复杂流程，政治阻力（如反对私有化） 一次性短期工具，无法解决结构性债务问题 国际援助 / 转嫁压力 要求盟友分担军费、通过国际组织（如 IMF）融资，或迫使其他国家增持美债 利用霸权地位分摊成本；但盟友对美国信任下降，国际组织融资附带条件（如财政紧缩） 依赖美国国际影响力，当前多国去美元化趋势下难度增加 短期缓解压力，长期削弱国际领导力与美元地位 财政货币化 政府与央行直接配合，央行直接为财政赤字融资（如 “现代货币理论” MMT 实践） 绕过市场融资，理论上可无限偿还债务；但彻底颠覆货币纪律，引发恶性通胀风险 需打破央行独立性传统，面临法律与政治争议（如美联储法定独立性限制） 极端情况下的 “最后手段”，可能导致货币体系崩溃 量化宽松是什么？ 中央银行近似零利率，购买中长期证券，增加基础货币供给，向市场注入大量流动性，鼓励借贷，刺激经济增长。
+...</p></div><footer class=entry-footer><span title='2025-04-09 21:48:46 +0000 UTC'>April 9, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer><a class=entry-link aria-label="post link to 美债" href=https://chuanlii.github.io/posts/%E7%BE%8E%E5%80%BA/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>黄金</h2></header><div class=entry-content><p>增加关税前，黄金为什么涨？ 其中一个原因：大家预期美国会对进口黄金加税，假设当前1g100元，预期1个月加税后，美国国内要买1g黄金就要花费110美元。 所以现在大家都会提前买黄金，导致推高到105美元。随着羊群效应、盲目从众，大家都买，导致价格涨到110美元，推动上涨。
+特点 黄金是抗通胀属性和避险属性的资产
+增加关税后，黄金是避险属性的资产，这种情况下不应该涨吗？ 此时短期流动性危机大于避险需求。 短期价格下跌，因为市场上的杠杆投资面临流动性危机，因为加杠杆必须要有一定比例的保证金，亏损先亏损保证金。最近股市下跌，导致为了不被平仓，被迫卖出黄金，都在卖，就导致黄金价格下跌。
+长期才会体现真正的避险属性。 流动性危机过去后，会体现作为真正的避险资产的属性。
+未来趋势： 是通胀，利多： 货币贬值，黄金因为稀缺性和非信用属性（不依赖政府或机构信用），天然是货币的 “替代品”。保值。硬资产。
+是经济衰退,利空 流动性危机，导致黄金价格下跌。 通货紧缩，物价下跌，现金购买力上升，黄金保值需求下降。 工业衰退，对黄金需求下跌。（黄金有10%用于工业需求）
+总结 黄金并非绝对的 “避险万能资产”，其价格会随市场对通胀 - 衰退 - 流动性的预期变化而波动，需要结合具体经济环境和市场情绪综合判断</p></div><footer class=entry-footer><span title='2025-04-08 00:31:21 +0000 UTC'>April 8, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer><a class=entry-link aria-label="post link to 黄金" href=https://chuanlii.github.io/posts/%E9%BB%84%E9%87%91/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>广场协议</h2></header><div class=entry-content><p>前因 德日经济崛起，美国进入贸易逆差，美国逆差来源，主要是德国和日本 日美贸易战，进入逆全球化
+上半场 1985年 内容：美元贬值，其他国家升值 各国：日本根据以往的经验，觉得没问题，升的多；欧洲升的少 市场：市场失控，日元升值了50%，超过预期
+下半场，卢浮宫协议 1987年 背景：美国贸易逆差没有缓解，要求各国刺激内需 各国：德国打太极，稍微刺激；日本激进刺激，推动地产和金融自由化 影响：日本进一步加大泡沫
+泡沫破裂 1990年 背景：冷战结束，防止资金外逃，美国加息 日本：日本也跟着加息，股市泡沫破裂，接着房价崩盘，硬着陆 后续：行业坏账高企，企业外迁，内需疲软，人口老龄化加剧，社会信心受损，失去30年
+启示 1 货币政策和财政刺激需谨慎，防止资产泡沫。 2 人口结构变化对经济长期影响巨大 3 加强金融监管 4 日本太傲慢，没有危机意识，过于乐观看不到风险</p></div><footer class=entry-footer><span title='2025-04-06 23:55:33 +0000 UTC'>April 6, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer><a class=entry-link aria-label="post link to 广场协议" href=https://chuanlii.github.io/posts/%E5%B9%BF%E5%9C%BA%E5%8D%8F%E8%AE%AE/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>特里芬难题</h2></header><div class=entry-content><p>1 布雷顿森林体系 美元与黄金挂钩，其他国家货币与美元挂钩
+特里芬难题 信用问题和流动性问题，不能都满足。
+增发美元，但黄金不会增加，美元不能与黄金挂钩，美元就有信用问题 不增发美元，世界经济发展需要更多的美元进行国际结算，美元不够就会阻碍经济发展，大家就不用美元了，地位不保。
+增发不增发，都会地位不保。
+最后导致该体系瓦解
+2 牙买加体系 汇率制度多样化
+黄金非货币化，
+储备货币多元化
+扩大特别提款权（SDR）
+3 SDR SDR 是国际货币基金组织（IMF）发的虚拟额度，价值由一篮子货币决定。 每个国家有一定的份额（就是贷款额度，要付利息），可以用来向其他国家借钱
+对小国：可以拿这个额度借钱 对大国：可以借出去，换回来利息
+4 美元如何作为世界货币的？ 提供流动性+信用
+美国贸易逆差必须的，因为要保证随着经济发展，世界上要有足够多的美元，作为外汇储备货币。
+那就只能维护美元地位，维持美元信用。 锚定石油（中东不稳 经济实力，经济规模，技术，金融霸权（中国竞争，实力下降 军事实力（中国竞争，实力下降 稳定：低通胀/汇率稳定/政治稳定独立
+5 美元作为世界货币的挑战 稳定性：美元信用透支，美债膨胀，滥用金融制裁，导致俄罗斯等去美元化 军事实力：下滑 经济实力：下滑
+6 《全球贸易体系重组用户指南》 目标： 维持储备货币的地位，建立新的体系 美元贬值，制造业回流
+美国开征关税，其他国家选择： 1 货币贬值：美国国内还是可以便宜买到商品，其他国家贬值后，本国购买力下降。 2 对等关税： 3 认怂：和美国签订类似广岛协议，其他国家相对美元汇率升值，美元贬值，购买美国长期无息国债，化解美国债务问题。 同时美元贬值，制造业回流，经济实力增强。</p></div><footer class=entry-footer><span title='2025-04-06 16:27:31 +0000 UTC'>April 6, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer><a class=entry-link aria-label="post link to 特里芬难题" href=https://chuanlii.github.io/posts/%E7%89%B9%E9%87%8C%E8%8A%AC%E9%9A%BE%E9%A2%98/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>区域</h2></header><div class=entry-content><p>几块重要区域 根据宗教、文化、地理等，分为以下几个区域：
+俄罗斯：军事大国，资源丰富 东亚-日韩：朝韩对立，制造业半导体发达 南亚-印度：人口大国，潜力高 东南亚-东盟：低端制造业，南海问题 美国-五眼联盟 拉丁美洲：存在感弱，资源丰富，锂、石油、矿，农业 欧盟-欧洲：多极之一 中东-伊斯兰世界：石油，巴以冲突，伊斯兰，战争，恐怖主义 撒哈拉以南非洲：不稳定，落后，资源丰富，经济殖民地 重要的矛盾冲突 亚太 中美竞争 韩朝半岛 台湾问题 南海问题 中印边界
+欧洲 俄乌冲突-北约东扩：俄罗斯和西方对立 巴尔干：塞尔维亚与科索沃
+中东 巴以冲突 伊朗核问题 叙利亚内战 也门内战 教派矛盾：什叶派（伊朗）与逊尼派（沙特）
+南亚 印巴克什米尔冲突
+非洲 非洲各种内战冲突</p></div><footer class=entry-footer><span title='2025-04-05 23:52:30 +0000 UTC'>April 5, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer><a class=entry-link aria-label="post link to 区域" href=https://chuanlii.github.io/posts/%E5%9C%B0%E7%BC%98%E6%94%BF%E6%B2%BB/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>抓包deepseek的api</h2></header><div class=entry-content><p>问题： 直接请求deepseek的api，回答的内容和通过cline返回的结果有很多区别，比如问今天几号，前者会回答以前的时间。
+通过抓包来验证一些，promot有什么区别。
+抓包https包 1 装个 mitmproxy， 启动mitmweb.exe 这个按中间人攻击的方式实现的，还需要装个ca证书
+2 打开设置，将系统代理设置为mitmproxy的端口 3 下载证书 打开 https://mitm.it, 下载windows的证书，安装（不用设置密码） 4 在mitmweb的Flow list中，根据关键词过滤deepseek。
+验证 直接请求api，模型是不知道时间的。问今天几号也不知道。
+通过cline请求，cline会带上非常长的system的prompt，有好几万的token。user的promot中，还会带上环境详情（包括时间等）。 下一次提问时，cline会把历史的ai和user的对话都带上传过去，每次都要几十k的数据。
+MCP：通过抓包发行，启动mcp后，cline会在系统prompt中，加上mcp的详细描述，每个方法参数等，之后还带上了一个查询天气的mcp的使用示例。</p></div><footer class=entry-footer><span title='2025-04-02 23:07:19 +0000 UTC'>April 2, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer><a class=entry-link aria-label="post link to 抓包deepseek的api" href=https://chuanlii.github.io/posts/%E6%8A%93%E5%8C%85deepseek%E7%9A%84api/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://chuanlii.github.io/posts/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=https://chuanlii.github.io/>My Personal Site</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>

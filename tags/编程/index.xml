@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>编程 on My Personal Site</title><link>https://chuanlii.github.io/tags/%E7%BC%96%E7%A8%8B/</link><description>Recent content in 编程 on My Personal Site</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 23 Mar 2025 19:34:29 +0000</lastBuildDate><atom:link href="https://chuanlii.github.io/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>python中一些问题</title><link>https://chuanlii.github.io/posts/python%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link><pubDate>Sun, 23 Mar 2025 19:34:29 +0000</pubDate><guid>https://chuanlii.github.io/posts/python%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid><description>&lt;h1 id="python模块导入问题"&gt;Python模块导入问题&lt;/h1&gt;
+&lt;h2 id="目录结构"&gt;目录结构&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── proj
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── p1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ ├── __init__.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ ├── m1a.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ └── m1b.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── p2
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ ├── __init__.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ └── m2c.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── md.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ └── main.py
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="原理"&gt;原理&lt;/h2&gt;
+&lt;p&gt;当前执行模块作为主模块，会把主模块所在当前路径加入&lt;code&gt;sys.path&lt;/code&gt;，会在&lt;code&gt;sys.path&lt;/code&gt;中找所在的包。
+&lt;code&gt;main.py&lt;/code&gt;作为主模块执行时，是看不到上一层&lt;code&gt;proj&lt;/code&gt;的，只能看到&lt;code&gt;p1&lt;/code&gt;，&lt;code&gt;p2&lt;/code&gt;，&lt;code&gt;md&lt;/code&gt;
+&lt;code&gt;m1b.py&lt;/code&gt;作为主模块是看不到&lt;code&gt;p1&lt;/code&gt;的
+每个module的&lt;code&gt;__name__&lt;/code&gt;都是引用的路径，比如&lt;code&gt;m1a.py&lt;/code&gt;的&lt;code&gt;__name__&lt;/code&gt;是&lt;code&gt;p1.m1a&lt;/code&gt;
+当&lt;code&gt;m1a.py&lt;/code&gt;作为主模块执行时，&lt;code&gt;m1a.py&lt;/code&gt;的&lt;code&gt;__name__&lt;/code&gt;就是&lt;code&gt;__main__&lt;/code&gt;了&lt;/p&gt;
+&lt;h2 id="问题"&gt;问题&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── proj
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ├── p1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ ├── __init__.py
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ ├── m1a.py # from p1.m1b import fb; def fa() 等价于 from .m1b import fb; def fa()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ │ └── m1b.py # fb()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ └── main.py # from p1.m1a import fa; fa()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行&lt;code&gt;main.py&lt;/code&gt;，正常，因为当前路径为&lt;code&gt;proj/&lt;/code&gt;，&lt;code&gt;m1a&lt;/code&gt;中的&lt;code&gt;.m1b&lt;/code&gt;等于&lt;code&gt;p1.m1b&lt;/code&gt;，&lt;code&gt;main.py&lt;/code&gt;是可见的
+执行&lt;code&gt;m1a.py&lt;/code&gt;，就会报错&lt;code&gt;attempted relative import with no known parent package&lt;/code&gt;，因为：
+当前路径是&lt;code&gt;proj/p1/&lt;/code&gt;，只能看到&lt;code&gt;p1&lt;/code&gt;下面的内容，但是&lt;code&gt;m1a&lt;/code&gt;中的&lt;code&gt;.m1b&lt;/code&gt;等于&lt;code&gt;p1.m1b&lt;/code&gt;，看不到&lt;code&gt;p1&lt;/code&gt;，所以找不到&lt;code&gt;p1.m1b&lt;/code&gt;&lt;/p&gt;</description></item></channel></rss>

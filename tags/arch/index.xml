@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Arch on My Personal Site</title><link>https://chuanlii.github.io/tags/arch/</link><description>Recent content in Arch on My Personal Site</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 15 Mar 2025 22:51:16 +0000</lastBuildDate><atom:link href="https://chuanlii.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml"/><item><title>arch升级问题</title><link>https://chuanlii.github.io/posts/arch%E5%8D%87%E7%BA%A7%E9%97%AE%E9%A2%98/</link><pubDate>Sat, 15 Mar 2025 22:51:16 +0000</pubDate><guid>https://chuanlii.github.io/posts/arch%E5%8D%87%E7%BA%A7%E9%97%AE%E9%A2%98/</guid><description>&lt;p&gt;长期没有使用的arch系统的电脑，升级报错。&lt;/p&gt;
+&lt;p&gt;pacman -Syyu 更新时，提示glibc版本过低，需要2.38版本，所有的都无法升级&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;pacman: /usr/lib/libc.so.6: version &lt;span style="color:#e6db74"&gt;`&lt;/span&gt;GLIBC_2.38&lt;span style="color:#e6db74"&gt;&amp;#39; not found (required by pacman)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;pacman: /usr/lib/libc.so.6: version `GLIBC_2.38&amp;#39;&lt;/span&gt; not found &lt;span style="color:#f92672"&gt;(&lt;/span&gt;required by /usr/lib/libalpm.so.15&lt;span style="color:#f92672"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;失败的尝试&lt;/strong&gt;：到镜像仓库，手动下载后，&lt;code&gt;pacman -U&lt;/code&gt; 安装，仍然提示glibc问题&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方式&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;打开 &lt;a href="https://aur.archlinux.org/packages/pacman-static"&gt;https://aur.archlinux.org/packages/pacman-static&lt;/a&gt; 找到置顶评论，下载一个二进制包
+&lt;a href="https://pkgbuild.com/~morganamilo/pacman-static/x86_64/bin/"&gt;https://pkgbuild.com/~morganamilo/pacman-static/x86_64/bin/&lt;/a&gt;
+下载好这个包之后，直接 &lt;code&gt;chmod +x pacman-static&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;最后执行下面的命令安装缺失的 glibc&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./pacman-static -S glibc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但是提示秘钥检查错误 &lt;code&gt;is unknown trust&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方式&lt;/strong&gt;：
+直接临时禁用，到&lt;code&gt;/etc/pacman.conf&lt;/code&gt; 设置 &lt;code&gt;SigLevel = Never&lt;/code&gt;，然后重试即可&lt;/p&gt;
+&lt;p&gt;之后去掉禁用，重新设置秘钥&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo pacman-key --init
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo pacman-key --populate archlinux
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo pacman-key --refresh-keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之后正常安装即可&lt;/p&gt;</description></item></channel></rss>
