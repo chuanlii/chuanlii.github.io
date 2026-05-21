@@ -4,6 +4,9 @@ title = "Home"
 
 # Welcome
 
-This site is powered by Hugo and ready for GitHub Pages.
-
-You can start editing content under `content/` and publish the generated `public/` folder.
+```
+.\blog.ps1 new my-first-post
+.\blog.ps1 serve
+.\blog.ps1 build
+.\blog.ps1 publish "更新文章"
+```
