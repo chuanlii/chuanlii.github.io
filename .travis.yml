@@ -1,0 +1,24 @@
+dist: focal
+language: shell
+
+branches:
+  only:
+    - main
+
+before_install:
+  - wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.161.1/hugo_extended_0.161.1_linux-amd64.tar.gz
+  - tar -xzf hugo.tar.gz
+  - chmod +x ./hugo
+
+script:
+  - ./hugo --minify
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: public
+  target_branch: gh-pages
+  on:
+    branch: main

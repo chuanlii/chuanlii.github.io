@@ -1,0 +1,42 @@
+baseURL = 'https://chuanlii.github.io/'
+locale = 'zh-cn'
+title = 'My Personal Site'
+theme = 'PaperMod'
+
+[params]
+  description = 'A personal website built with Hugo and GitHub Pages.'
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowShareButtons = false
+  ShowToc = true
+  TocOpen = true
+
+  [params.homeInfoParams]
+    Title = '欢迎来到我的 Hugo 站点'
+    Content = '这个站点已经切换到 PaperMod 主题，并准备部署到 GitHub Pages。'
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[[menu.main]]
+  name = 'Home'
+  pageRef = '/'
+  weight = 1
+
+[[menu.main]]
+  name = 'Hello'
+  pageRef = '/posts/hello'
+  weight = 2
+
+[[menu.main]]
+  name = 'Tags'
+  pageRef = '/tags'
+  weight = 3
+
+[[menu.main]]
+  name = 'Archives'
+  pageRef = '/archives'
+  weight = 4
