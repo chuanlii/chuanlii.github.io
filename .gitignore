@@ -2,5 +2,6 @@
 /resources/
 /.hugo_build.lock
 /tools/
+/themes/papermod.zip
 .DS_Store
 Thumbs.db
